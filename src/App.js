@@ -1,25 +1,33 @@
 import logo from './logo.svg';
+import React from 'react';
+import Home from './pages/home/home'
+import DashBoard from './pages/dashboard/dashboard';
+import Results from './pages/results/results';
+import LandingPage from './pages/landing/landingpage';
+import {createBrowserRouter, ScrollRestoration} from "react-router-dom";
+
+
 import './App.css';
+import { Sign } from './pages/login/sign';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+  const router = createBrowserRouter([
+    {
+      path: "/", element: <><Home/><ScrollRestoration /></>,
+      errorElement: <center>Page Not Found</center>//error page
+    },
+    {
+      path: "/dashboard", element: <><DashBoard/> <ScrollRestoration /></>
+    },
+    {
+      path: '/browse', element: <><Results/><ScrollRestoration/></>
+    },
+    {
+      path: '/service', element: <><LandingPage/><ScrollRestoration/></>
+    },
+    {
+      path: '/account', element: <><Sign/><ScrollRestoration/></>
+    }
+])
+
+export default router;

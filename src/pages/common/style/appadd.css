@@ -1,0 +1,29 @@
+.appadd{
+    margin: 5em 0em;
+    min-height: 50vh
+}
+
+#applink, .appadd h4{
+    margin-left: 20%;
+}
+
+#applink img{
+    width: 200px;
+    height: 70px;
+}
+#phoneimage img {
+    width: 400px;
+    object-fit: cover;
+  }
+  
+
+  @media screen and (max-width: 500px) {
+    #phoneimage img {
+        width: 95%;
+        object-fit: cover;
+        margin-left: 2.5%;
+      }
+      #applink, .appadd h4{
+        margin-left: 0%;
+    }
+  }
