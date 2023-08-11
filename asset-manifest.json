@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/callevasolutions/static/css/main.2f779933.css",
-    "main.js": "/callevasolutions/static/js/main.0d0b058c.js",
+    "main.css": "/callevasolutions/static/css/main.da92213f.css",
+    "main.js": "/callevasolutions/static/js/main.ab714e86.js",
     "static/js/787.2c1b263d.chunk.js": "/callevasolutions/static/js/787.2c1b263d.chunk.js",
     "static/media/heropicture1.jpg": "/callevasolutions/static/media/heropicture1.7bcbef0aefa8baf3e3fa.jpg",
     "static/media/cleaning.jpg": "/callevasolutions/static/media/cleaning.c0c25559558a44e6492f.jpg",
@@ -17,12 +17,12 @@
     "static/media/serviceimage.jpg": "/callevasolutions/static/media/serviceimage.032bade3a167187bab25.jpg",
     "static/media/logo.svg": "/callevasolutions/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/callevasolutions/index.html",
-    "main.2f779933.css.map": "/callevasolutions/static/css/main.2f779933.css.map",
-    "main.0d0b058c.js.map": "/callevasolutions/static/js/main.0d0b058c.js.map",
+    "main.da92213f.css.map": "/callevasolutions/static/css/main.da92213f.css.map",
+    "main.ab714e86.js.map": "/callevasolutions/static/js/main.ab714e86.js.map",
     "787.2c1b263d.chunk.js.map": "/callevasolutions/static/js/787.2c1b263d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f779933.css",
-    "static/js/main.0d0b058c.js"
+    "static/css/main.da92213f.css",
+    "static/js/main.ab714e86.js"
   ]
 }
