@@ -28,6 +28,6 @@ import { Sign } from './pages/login/sign';
     {
       path: '/account', element: <><Sign/><ScrollRestoration/></>
     }
-])
+],  { basename: "/callevasolutions" })
 
 export default router;

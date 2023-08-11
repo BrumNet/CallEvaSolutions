@@ -51,7 +51,8 @@ export function Footer (){
                 </section>
                 <section>
                     <div>
-                        <p>© Copyright @ 2023 | Developed by - <a href="http://www.victorthesaiyan.xyz" target='blank'>victorthesaiyan.xyz</a>. All Rights Reserved.</p>
+                        <p>CallEva Solutions © Copyright @ 2023 - All Rights Reserved.</p><br/>
+                        <p>Developed By <a href="http://www.victorthesaiyan.xyz" target='blank'> InfoTech Nexus </a></p>
                     </div>
                 </section>
             </div>

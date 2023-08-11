@@ -8,8 +8,8 @@ export function SignUp(){
         <div id="signuppage">
             <center>SignUp</center><br/>
             <center>
-            <button onClick={()=> setPrivilege("Customer")} className={privilege=="Customer"?'logactive':""}>Customer</button>
-            <button onClick={()=> setPrivilege("Provider")} className={privilege=="Provider"?'logactive':""}>Provider</button></center>
+            <button onClick={()=> setPrivilege("Customer")} className={privilege==="Customer"?'logactive':""}>Customer</button>
+            <button onClick={()=> setPrivilege("Provider")} className={privilege==="Provider"?'logactive':""}>Provider</button></center>
             <center>Social Media Icons</center>
             <center>Sign Up As {privilege}</center>
             <center><input placeholder='First Name'/><input placeholder='Last Name'/><br/></center>

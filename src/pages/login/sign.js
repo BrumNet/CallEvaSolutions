@@ -13,13 +13,13 @@ export function Sign ()  {
             <center>
                 <div>
                     <div id="loginleft">
-                        <div><button onClick={()=> {setLog("login")}} className={log == "login"?'activepage':''}>Login</button></div><br/>
-                        <div><button onClick={()=> {setLog("signup")}} className={log == "signup"?'activepage':''}>SignUp</button></div>
+                        <div><button onClick={()=> {setLog("login")}} className={log === "login"?'activepage':''}>Login</button></div><br/>
+                        <div><button onClick={()=> {setLog("signup")}} className={log === "signup"?'activepage':''}>SignUp</button></div>
                         <div><Link to="/"><img src={picture} alt="logo" /></Link></div>
                     </div>
                     
                     <div id="loginright">
-                        {log == "signup"?<SignUp/>:<Login/>}
+                        {log === "signup"?<SignUp/>:<Login/>}
                     </div>
                 </div>
             </center>
