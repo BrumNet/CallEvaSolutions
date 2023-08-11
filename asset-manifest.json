@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/callevasolutions/static/css/main.2f779933.css",
+    "main.js": "/callevasolutions/static/js/main.0d0b058c.js",
+    "static/js/787.2c1b263d.chunk.js": "/callevasolutions/static/js/787.2c1b263d.chunk.js",
+    "static/media/heropicture1.jpg": "/callevasolutions/static/media/heropicture1.7bcbef0aefa8baf3e3fa.jpg",
+    "static/media/cleaning.jpg": "/callevasolutions/static/media/cleaning.c0c25559558a44e6492f.jpg",
+    "static/media/food.jpg": "/callevasolutions/static/media/food.a580c7069278559d2743.jpg",
+    "static/media/heropicture2.jpg": "/callevasolutions/static/media/heropicture2.bb621fdaea3a00a6bee0.jpg",
+    "static/media/playstore.jpg": "/callevasolutions/static/media/playstore.e9d2d93e6f3906f287c8.jpg",
+    "static/media/app.jpg": "/callevasolutions/static/media/app.422777e102e12a166ee9.jpg",
+    "static/media/appstore.jpg": "/callevasolutions/static/media/appstore.c34a1513e0cf100089c1.jpg",
+    "static/media/profile.png": "/callevasolutions/static/media/profile.55dd82f9758c6d74f011.png",
+    "static/media/pricing.jpg": "/callevasolutions/static/media/pricing.29d25a463fb4fe7bfdf0.jpg",
+    "static/media/happy.jpg": "/callevasolutions/static/media/happy.5c07ce54da0ff4204d86.jpg",
+    "static/media/equiped.webp": "/callevasolutions/static/media/equiped.0c2d8a7f6da01d660144.webp",
+    "static/media/serviceimage.jpg": "/callevasolutions/static/media/serviceimage.032bade3a167187bab25.jpg",
+    "static/media/logo.svg": "/callevasolutions/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/callevasolutions/index.html",
+    "main.2f779933.css.map": "/callevasolutions/static/css/main.2f779933.css.map",
+    "main.0d0b058c.js.map": "/callevasolutions/static/js/main.0d0b058c.js.map",
+    "787.2c1b263d.chunk.js.map": "/callevasolutions/static/js/787.2c1b263d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f779933.css",
+    "static/js/main.0d0b058c.js"
+  ]
+}
