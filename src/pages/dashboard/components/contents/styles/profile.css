@@ -29,8 +29,14 @@
     margin-left: 1.5em;
 }
 #profile > div:nth-of-type(2) div{
-    display: flex;
+    display: block;
     flex-wrap: wrap;
+}
+#profile > div:nth-of-type(2) div > select{
+ margin: 0 0.4em;
+ min-width: 40px;
+ border-radius: 0.4em;
+ padding: 0.5em;
 }
 
 #profile button{

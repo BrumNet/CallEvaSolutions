@@ -11,14 +11,13 @@
 }
 
 .results > div:nth-of-type(2) div{
-    width: 150px;
-    height: 250px;
+    width: 200px;
+    min-height: 250px;
 }
 
 .results > div:nth-of-type(2) div > div:nth-of-type(1){
-    width: 150px;
-    height: 100px;
-    background-color: blueviolet;
+    width: 100%;
+    height: 300px;
 }
 
 
@@ -26,5 +25,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: inherit;
+    border-radius: 1em;
+  }
+
+  .results button {
+    background-color: orange;
+    padding: 1em 2em;
+    border: none;
+    color: white;
+    width: 100%;
+    text-align: left;
   }

@@ -4,10 +4,15 @@ import { Login } from './components/login'
 import { useState } from 'react'
 import { SignUp } from './components/signup';
 import { Link } from 'react-router-dom';
-import picture from '../common/assets/logo.png'
+import picture from '../common/assets/logo.png' 
 
-export function Sign ()  {
+
+export function Sign ()  {//pass
     const [log, setLog] = useState("login");
+    const changeState = () => {
+        setLog("login")
+    } 
+
     return(
         <div id="login">
             <center>
@@ -19,7 +24,8 @@ export function Sign ()  {
                     </div>
                     
                     <div id="loginright">
-                        {log === "signup"?<SignUp/>:<Login/>}
+                       { //x ? <Login/>:
+                        log === "signup"?<SignUp change={changeState}/>:<Login/>}
                     </div>
                 </div>
             </center>

@@ -1,14 +1,28 @@
 import './styles/packages.css'
 import defaultpic from './common/assets/profile.png'
+import { sessionData } from './data/alldata';
+import { updateProfile } from './bridge/bridge';
+import { useSelector } from 'react-redux'
 
 export function Packages(){
-    return  <div className='packages'>
+ const user = useSelector((state) => state.user.value)
+   let mypackage = sessionData["profile"]?.Package || "None";
+   const subscribe = async (x) => {
+    if(mypackage !== "None") return alert("You have a "+ mypackage + " Package Running")
+    const args = user === "provider"? '/serviceprofile/':'/customerprofile/'
+    let update
+    if(sessionData["profile"]) update = await updateProfile(sessionData["profile"]?._id, args, {Package: x})
+    if(update?.code === 201) alert("Updated")
+    console.log(update)
+    return;
+   }   
+   return  <div className='packages'>
                 <div>
                     <div>
                         Packages
                         <hr/>
                     </div>
-                    <div> <img src={defaultpic} alt="Profile"/> </div>
+                    <div> <img src={sessionData["profile"]?.profilePicture ||  defaultpic} alt="Profile"/> </div>
                 </div>
 
                 <div>
@@ -18,7 +32,7 @@ export function Packages(){
                             <hr/>
                             <h3>$50</h3>
                             <p>Valid for 3 months</p>
-                            <button>Buy</button>
+                            {mypackage === "Basic" ? <button className="active" >Active</button>: <button onClick={()=> subscribe("Basic")}> Buy </button>}
                         </center>
                     </div>
                     <div>
@@ -27,7 +41,7 @@ export function Packages(){
                             <hr/>
                             <h3>$150</h3>
                             <p>Valid for 6 months</p>
-                            <button>Buy</button>
+                            {mypackage === "Gold" ? <button className="active">Active</button>: <button onClick={()=> subscribe("Gold")}> Buy </button>}
                         </center>
                     </div>
                     <div>
@@ -36,7 +50,7 @@ export function Packages(){
                             <hr/>
                             <h3>$300</h3>
                             <p>Valid for 1 year</p>
-                            <button>Buy</button>
+                            {mypackage === "Premium" ? <button className="active">Active</button>: <button onClick={()=> subscribe("Premium")}> Buy </button>}
                         </center>
                     </div>
                 </div>    

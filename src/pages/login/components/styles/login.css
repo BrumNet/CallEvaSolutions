@@ -15,7 +15,6 @@
 
 #loginpage > *{
     margin-bottom: 1.5em;
-    margin-bottom: 1.5em;
 }
 
 #loginpage > div span{
@@ -30,4 +29,10 @@
     #loginpage > center:nth-of-type(1){
         display: none;
     }
+}
+
+#loginpage p{
+    display: block;
+    color: red;
+    margin-top: -1em;
 }

@@ -5,3 +5,14 @@
     border-radius: 50%;
   }
   
+  #picture{
+    background-color: black;
+    padding: 0.5em 1em;
+    border-radius: 3em;
+    color: white;
+    font-size: small;
+}
+
+#filebutton{
+  display: none;
+}

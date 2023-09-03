@@ -19,6 +19,7 @@
     width: 30%;
     margin-right: 10%;
     min-height: 100%;
+    line-height: 1.6em;
 }
 
 
@@ -67,6 +68,7 @@
     height: 300px;
     border-radius: 50%;
     background-color: black;
+    border: 1px solid white;
     z-index: 1;
 }
 

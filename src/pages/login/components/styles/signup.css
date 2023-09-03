@@ -50,6 +50,10 @@
     margin: 0em 1em;
 }
 
+#signuppage p {
+    color: red;
+}
+
 .logactive{
     background-color: black;
     color: orange;

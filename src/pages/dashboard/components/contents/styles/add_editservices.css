@@ -48,8 +48,23 @@
     color: white;
 }
 
+#addservice p{
+    color: red;
+}
 #inputabout{
     height: 10em;
+}
+
+#servicepicture{
+    display: none;
+}
+
+.serviceimage a{
+    background-color: black;
+    padding: 0.5em 1em;
+    border-radius: 3em;
+    color: white;
+    font-size: small;
 }
 
 @media screen and (max-width:1000px){

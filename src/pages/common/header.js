@@ -2,43 +2,52 @@ import './style/nav.css'
 import {Menu} from './assets/menu.js'
 import {Account} from './assets/account.js'
 import picture from './assets/logo.png'
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {useDispatch, useSelector } from 'react-redux';
-import { setadmin, setcustomer, setdefault, setprovider } from '../../redux/feature'
+import { setdefault } from '../../redux/feature'
+import categories from '../../categories.json'
+import { sessionData } from '../dashboard/components/contents/data/alldata';
+import Cookies from 'js-cookie'
+import { useRef, useState } from 'react';
 //import logo from ./
 
-export function Nav() {
+export function Nav(props) {
     return <div id="navblack"  className="navparent">
-                <NavSub/><NavSmall/>
+                <NavSub pass={props.setQuery}/><NavSmall/>
             </div>
 }
-export function NavW() {
+export function NavW(props) {
     return <div id="navwhite" className="navparent">
-                <NavSub/><NavSmall/>
+                <NavSub  pass={props.setQuery}/><NavSmall/>
             </div>
 }
 
-function NavSub (){
+function NavSub (props){
     const dispatch = useDispatch()
+    const spanRef = useRef()
     const user = useSelector((state) => state.user.value)
+    const [url, setUrl] = useState("Electronics")
+    const setSearch = (x) => { alert(props?.pass); spanRef.current.click()}
     return <div> 
             <div>
+
                 <span>{
                 user==="provider"
                 ?<Link to="/account">Login As A Customer</Link>
                 :<Link to="/account">Login As A Service Provider</Link>}</span> 
-                <span>Categories</span>
+                <span>Categories<div id="cat">{Array.from(Object.keys(categories)).map((x) => <><p style={{color: "black"}} onClick={() => setSearch(x)}>{x}</p> </>)}</div></span>
+                
             </div>
             <div>
                 <center><Link to="/"><img src={picture} alt="logo" /></Link></center>
             </div>
             <div>
-                <span>About</span> 
-                <span>{user==="undefined"?<Link to="/account">Login</Link>:<Link to="/dashboard">My Account</Link>}</span>
-                <span>{user==="undefined"
-                ?"SignUp"
-                :<Link to="/"  onClick={() => dispatch(setdefault())}>Logout</Link>}</span>
+                <span>{user==="undefined"?<Link to="/account">Login / SignUp</Link>:<Link to="/dashboard">My Account</Link>}</span>
+                <span>{user==="undefined"?""
+                :<Link to="/"  onClick={() => {Array.from(Object.keys(sessionData)).forEach((x) => delete sessionData[x]); dispatch(setdefault()); Cookies.remove("email"); Cookies.remove("token")}}>Logout</Link>}</span>
+                <span>Contact Us</span> 
                 
+                <Link to="/browse"><span ref={spanRef}></span></Link>
             </div>
         </div>
 }
@@ -59,11 +68,11 @@ function NavSmall (){
                 <div><center><Link to="/"><img src={picture} alt="logo" /></Link></center></div>
                 <div><Account/>
                     <div>
-                    <button>About</button> <br/>
-                    <button>{user==="undefined"?<Link to="/account">Login</Link>:<Link to="/dashboard">My Account</Link>}</button><br/>
-                    <button>{user==="undefined"
-                    ?"SignUp"
-                    :<Link to="/"  onClick={() => dispatch(setdefault())}>Logout</Link>}</button><br/>
+                    <button>Contact Us</button> <br/>
+                    <button>{user==="undefined"?<Link to="/account">Login / SignUp</Link>:<Link to="/dashboard">My Account</Link>}</button><br/>
+                    {user==="undefined"
+                    ?""
+                    :<button><Link to="/"  onClick={() => {Array.from(Object.keys(sessionData)).forEach((x) => delete sessionData[x]); dispatch(setdefault()); Cookies.remove("email"); Cookies.remove("token")}}>Logout</Link></button>}
                     </div>
                 </div>
             </div>

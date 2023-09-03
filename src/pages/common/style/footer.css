@@ -1,10 +1,15 @@
 #footer{
     color: white;
     background-color: black;
+    line-height: 1.6em;
 }
 
 #footer p{
     text-align: center;
+}
+
+#footer a, #footer a:visited, #footer a:active {
+    color:white
 }
 
 #footer section:nth-of-type(1), #footer section:nth-of-type(2){

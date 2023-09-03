@@ -1,11 +1,14 @@
 import './style/footer.css'
 import picture from './assets/logo.png'
+import { Whatsapp } from './assets/whatsapp'
+import { Facebook } from './assets/facebook'
+import { Instagram } from './assets/instagram'
 
 export function Footer (){
     return  <div id="footer">
                 <section>
                     <div><img src={picture} alt="logo" /></div>
-                    <div>Social Media Section</div>
+                    <div><Facebook/>   <Instagram/>   <Whatsapp/></div>
                 </section>
                 <section>
                     <div>Policies</div>
@@ -13,7 +16,7 @@ export function Footer (){
                 </section>
                 <section>
                     <div>
-                        Pages<br/><br/>
+                        PAGES<br/><br/>
                         About us<br/>
                         How it works<br/>
                         Privacy policy<br/>
@@ -25,7 +28,7 @@ export function Footer (){
                         FAQ<br/>
                     </div>
                     <div>
-                        Popular Categories<br/><br/>
+                        CATEGORIES<br/><br/>
                         Electricians<br/>
                         Painting<br/>
                         Car Repair<br/>
@@ -37,7 +40,7 @@ export function Footer (){
                         All Services<br/>
                     </div>
                     <div>
-                        Locations<br/><br/>
+                        LOCATIONS<br/><br/>
                         Broad Street<br/>
                         Duport Road<br/>
                         Fiamah<br/>
@@ -51,7 +54,7 @@ export function Footer (){
                 </section>
                 <section>
                     <div>
-                        <p>CallEva Solutions © Copyright @ 2023 - All Rights Reserved.</p><br/>
+                        <p>CallEva Solutions © Copyright @ 2023 - All Rights Reserved.</p>
                         <p>Developed By <a href="http://www.victorthesaiyan.xyz" target='blank'> InfoTech Nexus </a></p>
                     </div>
                 </section>
