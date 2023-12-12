@@ -3,14 +3,16 @@ import happy from './assets/happy.jpg'
 
 export function Happiness () {
     return <div className="happiness">
+
                 <div>
                     <div></div>
                     <div><img src={happy} alt="Calleva Services - Cleaning"/></div>
                     <div></div>
                 </div>
+
                 <div>
                     <div>
-                    <h1>Your Happiness,<br/> Guaranteed</h1>
+                    <h1>Your Happiness,<br/><br/> Guaranteed</h1>
                     <p>Your happiness is our goal. If you’re not <br/>
 
                         happy, we’ll work to make it right. Our <br/>
@@ -25,6 +27,7 @@ export function Happiness () {
 
                         the CallEva platform.
                     </p>
+                    
                     <button>Learn More...</button>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import axios, * as others from 'axios';
 
 export async function login(data){
+  
     const base = process.env.REACT_APP_BACKEND_URL;
 
     return await axios.post(base  + "/login", data, 
@@ -19,7 +20,9 @@ export async function login(data){
 }
 
 export async function signUp(data, pwd, privilege){
-  console.log(data)
+
+  console.log(data) 
+
   const base = process.env.REACT_APP_BACKEND_URL;
   const url = privilege==="Customer"?"/customerprofile":"/serviceprofile"
 

@@ -1,12 +1,20 @@
 {
-    "Electricians":[""],
-    "Painting":[""],
-    "Cleaning":[""],
-    "AC Repair":[""],
-    "Website Development":[""],
-    "Carpenter":[""],
-    "Car Rental Service":[""],
-    "All Services":[""],
-    "Car Repair":[""],
-    "Fashion":["Pants","Jackets"]
+"Real Estate Booking":["Hotels","Apartment","House","Stores","Warehouse"],
+"Car Rental Services":[""],
+"Delivery Services" :[""],
+"Plumber" :[""],
+"Electrician":[""],
+"Contractor":[""],
+"Architect":[""],
+"Painter":[""],
+"Mechanic":[""],
+"House Keeping Services" :[""],
+"Security Services":[""],
+"Roof Repair Services":[""],
+"AC Repair":[""],
+"Gardener" :[""],
+"Website Development":[""],
+"Carpenter":[""],
+"All Services":[""]
 }
+ 

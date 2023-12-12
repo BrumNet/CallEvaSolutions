@@ -7,16 +7,20 @@ import { useSelector } from 'react-redux'
 export function Packages(){
  const user = useSelector((state) => state.user.value)
    let mypackage = sessionData["profile"]?.Package || "None";
+
    const subscribe = async (x) => {
     if(mypackage !== "None") return alert("You have a "+ mypackage + " Package Running")
     const args = user === "provider"? '/serviceprofile/':'/customerprofile/'
+
     let update
     if(sessionData["profile"]) update = await updateProfile(sessionData["profile"]?._id, args, {Package: x})
+
     if(update?.code === 201) alert("Updated")
     console.log(update)
     return;
    }   
    return  <div className='packages'>
+    
                 <div>
                     <div>
                         Packages

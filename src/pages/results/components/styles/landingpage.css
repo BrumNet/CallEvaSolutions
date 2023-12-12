@@ -27,7 +27,7 @@
     border-radius: inherit;
   }
 
-#servicepage button, #backButton{
+#servicepage button, #backButton, #paymentPrompt button{
     margin-top: 1.5em;
     background-color: orange;
     padding: 1em 2em;
@@ -43,14 +43,15 @@
     background-color: rgba(0, 0, 255, 0.66);
     margin-left: 5%;
 }
+
 #servicepage  > div:nth-of-type(1)  button{
     background-color: red;
 }
+
 @media screen and (max-width:1000px) {
     #servicepage div {
         width: 100%;
     }
-
     
 #servicepage > div:nth-of-type(1) div{
     width: 100%;
@@ -59,4 +60,13 @@
     padding-top: 2em;
 }
 
+}
+
+#paymentPrompt{
+    margin: 5em 0em;
+}
+
+#paymentPrompt button:nth-of-type(1){
+    background-color: red;
+    margin-right: 2em;
 }

@@ -1,4 +1,4 @@
-#loginpage button, #loginpage input {
+#loginpage button, #loginpage input, #forgotPassword button,  #forgotPassword input{
     border-radius: 1em;
     min-width: 70%;
     height: 2.5em;
@@ -8,7 +8,7 @@
     border: 0.1em solid rgb(106, 82, 82);
 }
 
-#loginpage button{
+#loginpage button,  #forgotPassword button{
     background-color: orange;
     border: none;
 }
