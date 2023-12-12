@@ -36,8 +36,8 @@ export function PaymentHistory(){
                 <tr>
                 {
                 user === "provider"
-                ?["","Customer Name","Service","Amount","Payment Type","Date"].map(x => <td>{x}</td>)
-                :["","Payment For","Service Provider Name", "Amount","Type","Date"].map(x => <td>{x}</td>)
+                ?["","Customer","Service","Amount","Type","Status","Date"].map(x => <td  onClick={() => {setData(data.sort((a,b) => (a[x] > b[x]) ? 1 : ((b[x] > a[x]) ? -1 : 0)))}}>{x}</td>)
+                :["","Service","Provider", "Amount","Type","Date"].map(x => <td>{x}</td>)
                 }
                 </tr>
                 
@@ -53,6 +53,7 @@ export function PaymentHistory(){
                     <td>{x["paymentsFor"]}</td>
                     <td>{x["amount"]}</td>
                     <td>{x["type"]}</td>
+                    <td>{x["status"]}</td>
                     <td>{x["statusDate"]}</td>
                     </tr>) 
                     : Array.from(data).map((x, i) => <tr>

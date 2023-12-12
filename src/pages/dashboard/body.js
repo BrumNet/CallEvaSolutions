@@ -2,20 +2,25 @@ import './body.css'
 import { useState, useRef } from 'react'
 import {useSelector } from 'react-redux'
 import { Profile } from './components/contents/profile'
+
 import { RequestedServices } from './components/contents/requestedservices'
 import Dropdown from './assets/dropdown'
 //import {payment History}
 //import {payment History}
+
 import {Packages} from './components/contents/packages'
 import { AddService } from './components/contents/add_editservices'
+
 import { PaymentHistory } from './components/contents/paymenthistory'
 import { MyServices } from './components/contents/myservices'
 import Cookies from 'js-cookie'
 
 export function Body () {
     //const unApproved = useRef()
+
     const [menu, setMenu] = useState("profile")
     const user = useSelector((state) => state.user.value)
+
     const getMenu = (x) => {
         return x === "profile" ? "Profile"
         : x === "requested" ? "Requested Services"
@@ -48,6 +53,7 @@ export function Body () {
                     <button onClick={() => setMenu("profile")} className={menu === "profile"?"active":''}>Profile</button><br/>
                     <button onClick={() => setMenu("requested")} className={menu === "requested"?"active":''}>Requested Services</button><br/>
                     <button onClick={() => setMenu("phistory")} className={menu === "phistory"?"active":''}>Payment History</button><br/>
+                    
                     {user === "provider"?<>
                     <button onClick={() => setMenu("services")} className={menu === "services"?"active":''}>Services</button><br/>
                     <button onClick={() => setMenu("addservice")} className={menu === "addservice"?"active":''}>Add New Service</button>
@@ -64,6 +70,7 @@ export function Body () {
                     <button onClick={() => setMenu("profile")} className={menu === "profile"?"active":''}>Profile</button>
                     <button onClick={() => setMenu("requested")} className={menu === "requested"?"active":''}>Requested Services</button>
                     <button onClick={() => setMenu("phistory")} className={menu === "phistory"?"active":''}>Payment History</button>
+                    
                     {user === "provider"?<>
                     <button onClick={() => setMenu("services")} className={menu === "services"?"active":''}>Services</button>
                     <button onClick={() => setMenu("addservice")} className={menu === "addservice"?"active":''}>Add New Service</button>
@@ -72,6 +79,7 @@ export function Body () {
                     </>:<></>}
                 </div>
             </div>
+            
             <div id="main">
             {(() => {
                 switch(menu) {

@@ -1,33 +1,38 @@
 import { Picture } from './common/picture'
 import { useEffect, useState } from 'react'
+
 import { getServices } from './data/getServices';
 import { sessionData } from './data/alldata';
 import Cookies from 'js-cookie'
 
 export function MyServices(props){
+
     const [xdata, setData] = useState({});
     const email = Cookies.get('email');    
+
     const getData = async () => {
         let getMyServices = sessionData["MyServices"]
+
         if(!getMyServices) {
             const details = await getServices(email)
             sessionData["MyServices"] = details
             //Cookies.set("myservices" , JSON.stringify(details))
             setData(details)
         }
+
         else{
             setData(sessionData["MyServices"])
         }   
+
     }
     //TODO: if redux getStatechanged
-    useEffect(() => {
-        getData()
-      },[] );
+    useEffect(() => { getData() },[] );
 
     return  <div>
         <div><Picture/></div>
         <center className="req_service">
-        {xdata==null
+        {
+        xdata==null
         ?<></>
         :<table>
             <thead>

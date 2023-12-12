@@ -2,7 +2,6 @@ import defaultpic from './assets/profile.png'
 import './picture.css' 
 import { useEffect, useRef, useState } from 'react';
 import { sessionData } from '../data/alldata';
-import Cookies from 'js-cookie'
 
 export function Picture (props){
     let profilePicture = sessionData["profile"]?.profilePicture || defaultpic;

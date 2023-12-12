@@ -1,43 +1,86 @@
 import './styles/landingpage.css'
+import { useState } from 'react'; 
+
 import servicepic from './assets/food.jpg'
+import short from 'short-uuid';
+
 import { LocationIcon } from './assets/location';
 import Cookies from 'js-cookie'
+
 import { submitPayment, executeRequestNotification } from './bridge/submitpayment';
+import {makePayment} from './bridge/makePayment' 
+
 import { Verified } from './assets/verified';
 import { useSelector } from 'react-redux'
 
+import { sessionData } from '../../dashboard/components/contents/data/alldata.js';
+
+
 export function ServicePage (props){
+
+    const [paymentPrompt, changePrompt]  = useState(false)
     const d = new Date()
+
+    const transactionId = short.uuid();
     const user = useSelector((state) => state.user.value)
+
     const executeMomo = async ()=>{
-        const payload = {
-            "requestNumber": "02453987", //customer.mobile
+
+        changePrompt(true);
+        
+        const body = {
+            amount: props.data.price,
+            currency: 'LRD',
+            externalId: transactionId,//TOD0: What's external id?
+
+            payer: {
+              partyIdType: 'MSISDN',
+              partyId: sessionData["profile"]?.contact || "",//TODO: replace with customer mobile number
+            },
+
+            payerMessage: 'Payment for '+ props.data.packageName,
+            payeeNote: 'Payment made by '+ sessionData["profile"]?.contact,
+          };
+
+        const payload = { 
+            "requestNumber": sessionData["profile"]?.contact || "", //customer.mobile
              "customerEmail": Cookies.get('email'), 
              "serviceProviderEmail":  props.data.providerEmail,
+//TODO: Generate UUID
              "paymentsFor": props.data.packageName, 
-             "transactionID": "000015533222",
+             "transactionID": transactionId, 
              "amount": props.data.price,
+
              "type": "Mobile Money",
-             "payFor": "",
+             "status": "Outstanding",
              "statusDate" : d.toUTCString()
              }
-        
-            const result = await submitPayment(payload)
-            if (result?.code === 201) return executeRequest();
+
+             await makePayment(body).then(
+                async ()=>{
+                const result = await submitPayment(payload)
+                if (result?.code === 201) return executeRequest();
+                }
+             );
+            
     }
 
     const executeRequest = async ()=>{
         if(user !== "customer") return alert("Kindly Sign In As A Customer")
 
         const payload = { 
-        "requestNumber": "1234", 
+        "_id": transactionId,
+        "requestNumber": sessionData["profile"]?.contact  || "", 
         "customerEmail":  Cookies.get('email'), 
+
         "category": props.data.category, 
         "subcategory": props.data.subCategory, 
         "package": props.data.packageName, 
+
         "price":props.data.price, 
         "serviceProviderEmail": props.data.providerEmail, 
         "time": "14:32", //DateTime remove
+
         "status": "Pending", 
         "payment": "MTN Momo",
         "date": d.toUTCString()
@@ -45,14 +88,39 @@ export function ServicePage (props){
             const result = await executeRequestNotification(payload)
             if (result?.code === 201) alert("Service Provide Will Reach Out to You soon")//replace with a page.
     }
-
+    
     return  <>
-                <center><button id="backButton"  onClick={()=>{props.landingpage()}}>Go Back to Search Results</button>
-                </center><br/>
+    {
+    paymentPrompt 
+    ? <>
+        <div id="paymentPrompt"><center>
+
+            <h2>Payment Prompt</h2>
+            <p>Payment Prompt has been sent to User XXXXXXX for the purchase of XXXX for XXX dollars. <br/><br/> Kindly Confirm when payment is received</p>
+
+            <button onClick={()=> {changePrompt(false)}} >Cancel</button>
+            <button onClick={()=> {changePrompt(false)}}>Confirm</button>
+
+            <br/><br/>
+            </center>
+        </div>
+    </>
+    :<>
+                <center>
+                    <button id="backButton"  onClick={()=>{props.landingpage()}}>Go Back to Search Results</button>
+                </center>
+
+                <br/>
                 <hr/>
+                
+                {user !== "customer"?
+                <>
+                <br/><br/><br/><br/><center>Please Login As Customer to Make A Purchase</center>
+                <br/><br/><br/><br/><br/><br/>
+                </>:
                 <div id="servicepage">
                 <div>
-                    <div><img src={servicepic} alt="Get App On Play Store"/></div>
+                    <div><img src={servicepic} alt="Service Picture"/></div>
                     
                     <br/>
                 </div>
@@ -68,9 +136,11 @@ export function ServicePage (props){
                     
 
                     <br/>
-                    <button onClick={() => executeMomo()}>${props.data.price} | Momo icon</button>
+                    <button onClick={() => executeMomo()}>{props.data.price} | Momo icon</button>
                 </div>
                 <span></span>
+            
             </div>
-            </>
+            }
+    </>}</>
 }

@@ -1,6 +1,7 @@
 import './styles/whychooseeva.css';
 import pricing from './assets/pricing.jpg'
 import expert from './assets/experts.jpg'
+
 import equipped from './assets/equiped.webp'
 import certified from './assets/certified.jpg'
 

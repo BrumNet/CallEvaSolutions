@@ -1,7 +1,7 @@
 {
   "name": "callevasolutions",
   "homepage": "https://brumnet.github.io/callevasolutions/",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.2",
     "react-scripts": "5.0.1",
+    "short-uuid": "^4.2.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

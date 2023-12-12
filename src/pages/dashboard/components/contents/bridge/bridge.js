@@ -60,3 +60,23 @@ export async function updateProfile(id, args, data){
   //console.log(error);
 });
 }
+
+export async function updateRequest(data, id){
+  const base = process.env.REACT_APP_BACKEND_URL;
+
+  return await axios.put(base  +  "/servicerequest/"+id, data,
+  {
+  headers: { 
+    //'Authorization': "Bearer "+ bearer_token,
+    'Content-Type': 'application/json',
+  }
+}
+).then(function (response) {
+  //console.log(response);
+  if(sessionData?.reqservices) delete sessionData.reqservices
+  return response.data
+})
+.catch(function (error) {
+ // console.log(error);
+});
+}
