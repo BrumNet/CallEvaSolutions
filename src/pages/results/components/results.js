@@ -32,15 +32,16 @@ export function Result (props){
 
         //from results filtering
         if(locationRef.current.value !== "" && details.length > 0) detailsFilter = details?.filter(x => x["city"] === locationRef.current.value)
+        
         if(searchRef.current.value !== "") 
                 detailsFilter = detailsFilter?.filter(x => JSON.stringify(x).includes(searchRef.current.value))
-        
-        console.log("exec")
+         
         return setData(detailsFilter)
     }
     
     useEffect(() => {
         
+    if(Cookies.get("query")) {
     searchRef.current.defaultValue = Cookies.get("query").split("|")[1] || ""
     
     const locRefOpt = Array.from(locationRef.current.options)
@@ -48,7 +49,7 @@ export function Result (props){
     const locToSelect = locRefOpt.find(item => item.text === Cookies.get("query").split("|")[0])
 
     locToSelect.selected = true
-
+    }
     getData()
 }, []); 
     const arr = Array.from(data)
@@ -73,7 +74,7 @@ export function Result (props){
         <div className='results'> 
               <center><h3>Services Found</h3></center>
                 {
-                    arr.length < 1 ? <><center><br/><br/><b>0 Results</b></center><br/><br/><br/></>
+                    data.length < 1 ? <><center><br/><br/>Sorry! No Results Found</center><br/><br/><br/></>
                     : arr.map(x =>  <div>
                                             <div><img src={x.serviceprofilepic || browsepic} alt={x.packageName}/></div><br/><br/>
                                             {x.packageName}<br/><br/> 

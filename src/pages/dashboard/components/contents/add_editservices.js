@@ -130,12 +130,12 @@ export function AddService (props){
             <input ref={aboutRef} id="inputabout" type='textarea'/><br/><br/><br/>
             <div>
 
-                <div>Select Category<br/><select onChange={()=> setSubCategory(category[catRef.current.value])} ref={catRef}>
+                <div>Select Category<br/><br/><select onChange={()=> setSubCategory(category[catRef.current.value])} ref={catRef}>
                     {/* {props?.data ? <option>{props?.data?.category}</option>:<></>} */}
                     {Array.from(Object.keys(category)).map((x) => <option>{x}</option>)}
                     </select></div>
 
-                <div>Select SubCategory<br/><select ref={subCatRef}> 
+                <div>Select SubCategory<br/><br/><select ref={subCatRef}> 
                     {subCategory.map((x) => <option>{x}</option>)} 
                     </select></div>
             </div>
@@ -146,7 +146,7 @@ export function AddService (props){
             <select ref={currencyRef}><option>LRD</option><option>USD</option></select>
             {"  "}<input placeholder='0' type='number' ref={priceRef}/><br/><br/><br/>
 
-            <label>City</label><br/>
+            <label>City</label><br/><br/>
             <select ref={cityRef}>{cities["cities"].map(x => <option>{x}</option>)}</select>
             
             {err === "empty"?<p>All entries must be filled</p>:<></>}

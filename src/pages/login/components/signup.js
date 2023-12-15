@@ -43,7 +43,7 @@ export function SignUp(props){
     //console.log(user)
     if(user?.code === 201) {
         setError("None"); 
-        alert("Your Account has been created. Kindly Login with your credentials");
+        //alert("Your Account has been created. Kindly Login with your credentials");
         return props.change()
     }
 

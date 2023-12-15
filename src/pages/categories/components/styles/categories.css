@@ -24,3 +24,11 @@
   .categories p{
     text-align: center;
   }
+
+  .categories button{
+    background-color: orange;
+    padding: 1em 0em;
+    width: 100%; 
+    border-radius: 0.1em;
+    border: none;
+  }

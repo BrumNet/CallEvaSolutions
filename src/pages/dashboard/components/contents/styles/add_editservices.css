@@ -37,6 +37,9 @@
     margin-right: 3em;
 }
 
+#addservice select {
+    height: 2em;
+}
 
 #addservice button{
     float: right;

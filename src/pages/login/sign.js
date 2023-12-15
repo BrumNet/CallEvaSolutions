@@ -11,7 +11,10 @@ import picture from '../common/assets/logo.png'
 export function Sign ()  {//pass
 
     const [log, setLog] = useState("login");
+    const [signedUp, setSignedUp] = useState(false)
+
     const changeState = () => {
+        setSignedUp(true)
         setLog("login")
     } 
 
@@ -21,6 +24,7 @@ export function Sign ()  {//pass
             <center>
                 <div>
                     <div id="loginleft">
+                        {signedUp ? <>Account Created! <br/></> : <></>}
                         <div><button onClick={()=> {setLog("login")}} className={log === "login"?'activepage':''}>Login</button></div><br/>
                         
                         <div><button onClick={()=> {setLog("signup")}} className={log === "signup"?'activepage':''}>SignUp</button></div>

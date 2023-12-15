@@ -21,7 +21,7 @@ export function Category(){
                         return <div onClick={()=> x === "All Services" ? Cookies.set("category", "") : Cookies.set("category", x)}>
                             <Link to="/browse">
                             <div><img src={images[i]||browsepic} alt={x}/></div>
-                            <p>{x}</p> 
+                            <button>{x}</button> 
                             </Link>
                         </div>
                     })} 

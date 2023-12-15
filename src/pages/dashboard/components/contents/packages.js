@@ -9,18 +9,18 @@ export function Packages(){
    let mypackage = sessionData["profile"]?.Package || "None";
 
    const subscribe = async (x) => {
-    if(mypackage !== "None") return alert("You have a "+ mypackage + " Package Running")
+    if(mypackage !== "None") return 
     const args = user === "provider"? '/serviceprofile/':'/customerprofile/'
 
+    let d = new Date().toUTCString
     let update
-    if(sessionData["profile"]) update = await updateProfile(sessionData["profile"]?._id, args, {Package: x})
+   if(sessionData["profile"]) update = await updateProfile(sessionData["profile"]?._id, args, {Package: x, PackageDate: d})
 
     if(update?.code === 201) alert("Updated")
     console.log(update)
     return;
    }   
    return  <div className='packages'>
-    
                 <div>
                     <div>
                         Packages
@@ -58,5 +58,7 @@ export function Packages(){
                         </center>
                     </div>
                 </div>    
+                {mypackage !== "None"?<center><small>You have a {mypackage} package running</small></center>:<center><small>No Package running</small></center>}
+                <br/>
             </div>
 }

@@ -20,6 +20,9 @@ export function Login (){
     const codeRef = useRef(null);
     const linkRef = useRef(null)
 
+    const newpwdRef = useRef(null);
+    const connewpwdRef = useRef(null);
+
     const loginForm = {}
     const [error, setError] = useState("")
     const [forgotEmail, setForgotEmail] = useState(false)
@@ -92,16 +95,22 @@ export function Login (){
             <div onClick={() => {setEmailCheck(false) ; setForgotEmail(false)}}><GoBack/></div> <br/>
             
             {error === "all"?<p>All inputs are required</p>:<></>}
-            {!emailCheck ? <>
+            {
+            !emailCheck 
+            ? <>
             {error === "email"?<p>Kindly Check Your Email</p>:<></>}
 
             <input ref={forgotPasswordEmailRef} type="email" placeholder='Email Address'/><br/><br/>
+            <small>A Code will be sent to your email </small><br/><br/>
             <button  onClick={() => setEmailCheck(true)}>Submit</button>{/**Check if emailexists in database */}
             <br/> <br/>
-            </>:<>
+            </>
+            :<>
             
             <input ref={codeRef} type="email" placeholder='Enter Code'/><br/><br/>
-            <small>A Code has been sent to your email </small>
+            <small>Kindly Check Your Email For Access Code </small><br/><br/>
+            <input ref={newpwdRef} type="password" placeholder='New Password'/><br/><br/>
+            <input ref={connewpwdRef} type="password" placeholder='Confirm New Password'/><br/><br/>
             <br/><br/>
             <button>Submit</button>
             <br/><br/>

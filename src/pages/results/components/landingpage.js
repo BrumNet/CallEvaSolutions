@@ -66,7 +66,7 @@ export function ServicePage (props){
     }
 
     const executeRequest = async ()=>{
-        if(user !== "customer") return alert("Kindly Sign In As A Customer")
+        //if(user !== "customer") return alert("Kindly Sign In As A Customer")
 
         const payload = { 
         "_id": transactionId,
@@ -86,7 +86,7 @@ export function ServicePage (props){
         "date": d.toUTCString()
     }
             const result = await executeRequestNotification(payload)
-            if (result?.code === 201) alert("Service Provide Will Reach Out to You soon")//replace with a page.
+            if (result?.code === 201) alert("Service Provider Will Reach Out to You soon")//replace with a page or prompt
     }
     
     return  <>
@@ -100,6 +100,7 @@ export function ServicePage (props){
 
             <button onClick={()=> {changePrompt(false)}} >Cancel</button>
             <button onClick={()=> {changePrompt(false)}}>Confirm</button>
+            
 
             <br/><br/>
             </center>

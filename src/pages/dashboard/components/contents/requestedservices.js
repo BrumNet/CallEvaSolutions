@@ -8,6 +8,8 @@ import { getReqServices } from './data/getReqServices'
 
 import { sessionData } from './data/alldata'
 import Cookies from 'js-cookie'
+import { Cancel } from '../../assets/cancel'
+import { Done } from '../../assets/done'
 
 export function RequestedServices (){
     const user = useSelector((state) => state.user.value)
@@ -53,8 +55,8 @@ export function RequestedServices (){
                 <tr>
                 {
                 user === "provider"
-                ?["","Customer", "Service", "Price", "Payment", "Status", "Action"].map(x => <td>{x}</td>)
-                :["","Service", "Category", "Subcategory","Price", "Provider", "Status", "Action"].map(x => <td>{x}</td>)
+                ?["","Customer", "Service", "Price", "Payment", "Status", ""].map(x => <td>{x}</td>)
+                :["","Service", "Category", "Subcategory","Price", "Provider", "Status", ""].map(x => <td>{x}</td>)
                 }
                 </tr>
                 
@@ -75,7 +77,7 @@ export function RequestedServices (){
 
                         <td>{x["status"]}</td>
                         {/* <td>{x["date"]}</td> */}
-                        <td><button onClick={()=>updateRequestStatus("Revoked", x["_id"])}>Revoke Service</button></td>
+                        <td><button title='Revoke Service' onClick={()=>updateRequestStatus("Revoked", x["_id"])}><Cancel/></button></td>
                         </tr>
                     /**
                      Payment Status for payments
@@ -93,7 +95,7 @@ export function RequestedServices (){
                     <td>{x["serviceProviderEmail"]}</td>
                     <td>{x["status"]}</td>
                     {/* <td>{x["date"]}</td> */}
-                    <td><button onClick={()=>updateRequestStatus("Completed", x["_id"])} title="Click to suggest service completion">Change Status to Complete</button></td>{/**Change Pending to Rendered, Change Pending to  */}
+                    <td><button onClick={()=>updateRequestStatus("Completed", x["_id"])} title="Click to suggest service completion"><Done/></button></td>{/**Change Pending to Rendered, Change Pending to  */}
                     </tr>
                 
                 )

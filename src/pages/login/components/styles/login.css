@@ -36,3 +36,7 @@
     color: red;
     margin-top: -1em;
 }
+
+#loginpage a:hover{
+    text-decoration: underline;
+}

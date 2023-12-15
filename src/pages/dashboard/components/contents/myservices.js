@@ -47,7 +47,7 @@ export function MyServices(props){
             <tbody>
                 {
                     xdata.length === 0?
-                    <tr><td colSpan={6}><center><h4>No Data Found</h4></center></td></tr>
+                    <tr><td colSpan={6}><center><h4>Loading</h4></center></td></tr>
                     : Array.from(xdata).map((x,i) => <tr>
                         <td>{i + 1}. </td>
                         <td>{x["packageName"]}</td>

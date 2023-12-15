@@ -13,6 +13,7 @@ export function Profile() {
     const nameRef = useRef(null), countryRef = useRef(null), 
     addressRef= useRef(null), numberRef= useRef(null);
     const [data, setData] = useState({});
+    const [updatedProfile, setUpdatedProfile] = useState(false)
     const email = Cookies.get('email');
     let updateForm = {}, availability = {}
     //Cookies.remove(email)
@@ -56,7 +57,7 @@ export function Profile() {
         if(data) update = await updateProfile(data?._id, args, updateForm)
 
         //console.log(update)
-        if(update?.code === 201) alert("Updated")
+        if(update?.code === 201) setUpdatedProfile(true)
     }
     //if(user?.code) {return props.change()}
    
@@ -154,7 +155,10 @@ export function Profile() {
                 </div>:""}
 
                 
+                {updatedProfile ? <center>Updated!</center> : <></>}
+                <br/>
                 <button  onClick={()=>execute()}>Save</button>
+                
            </div>
 } 
 //<select><option>am</option><option>pm</option></select>
