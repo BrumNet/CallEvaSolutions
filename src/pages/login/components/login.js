@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { setcustomer, setprovider } from '../../../redux/feature'
 import './styles/login.css'
-import { login } from '../bridge/bridge'
+import { login, forgotPassword, changePassword } from '../bridge/bridge'
 import { Link } from 'react-router-dom';
 
 import Cookies from 'js-cookie'
@@ -23,20 +23,24 @@ export function Login (){
     const newpwdRef = useRef(null);
     const connewpwdRef = useRef(null);
 
+    const updateCode = {}
+
     const loginForm = {}
     const [error, setError] = useState("")
+    const [email, setEmail] = useState("")
     const [forgotEmail, setForgotEmail] = useState(false)
     const [emailCheck, setEmailCheck] = useState(false)
 
-    const result = async () => {
-
-        if(emailRef.current.value.length < 1) return setError('all'); 
-
-        const validateEmail = (email) => {
+    const validateEmail = (email) => {
             const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
             if (email.match(emailReg)) return true;
 
         } 
+    const result = async () => {
+
+        if(emailRef.current.value.length < 1) return setError('all'); 
+
+        
         
         if(!validateEmail(emailRef.current.value)) return setError('email'); 
         if(pwdRef.current.value.length < 6) return setError('pwd'); 
@@ -70,9 +74,10 @@ export function Login (){
             <center>Login</center><br/><br/>
 
             {/*<center>Social Media Icons</center>*/}
-            {error === "all"?<p>All inputs are required</p>:<></>}
-            {error === "email"?<p>Kindly Check Your Email</p>:<></>}
             
+            {error === "pwdchkd"?<p>Success! Kindly Login</p>:<></>}
+            {error === "all"?<p>All inputs are required</p>:<></>}
+            {error === "email"?<span>Kindly Check Your Email</span>:<></>}
             <input ref={emailRef} type="email" placeholder='Email Address'/><br/>
             <input ref={pwdRef} type="password" placeholder='Password'/><br/>
 
@@ -92,31 +97,79 @@ export function Login (){
             <br/>
             <center>Forgot Password</center><br/> 
             {/*<center>Social Media Icons</center>*/}
-            <div onClick={() => {setEmailCheck(false) ; setForgotEmail(false)}}><GoBack/></div> <br/>
+            <div onClick={() => {setEmailCheck(false) ; setForgotEmail(false); setError("")}}><GoBack/></div> <br/>
             
             {error === "all"?<p>All inputs are required</p>:<></>}
             {
             !emailCheck 
             ? <>
-            {error === "email"?<p>Kindly Check Your Email</p>:<></>}
+            {error === "email"?<p>Incorrect Email</p>:<></>}
+            {error === "loginErr"?<p><br/>Email Doesn't Exist</p>:<></>}
+            {error === "login"?<p><br/>Checking Email...</p>:<></>}
 
             <input ref={forgotPasswordEmailRef} type="email" placeholder='Email Address'/><br/><br/>
             <small>A Code will be sent to your email </small><br/><br/>
-            <button  onClick={() => setEmailCheck(true)}>Submit</button>{/**Check if emailexists in database */}
+
+            <button  onClick={
+            async () => { 
+                setError("login")
+            if(forgotPasswordEmailRef.current.value === "" || !validateEmail(forgotPasswordEmailRef.current.value))
+             {setError('email')}
+             else {
+                var response = await forgotPassword({"email": forgotPasswordEmailRef.current.value})
+                console.log(response)
+                if(response?.code === 200) { setEmail(forgotPasswordEmailRef.current.value); return setEmailCheck(true)}
+                else setError('loginErr')
+            }
+            }
+
+             }>Submit</button>{/**Check if emailexists in database */}
             <br/> <br/>
             </>
-            :<>
-            
-            <input ref={codeRef} type="email" placeholder='Enter Code'/><br/><br/>
+            :
+            <div id="updatepassword">  
+            {error === "pwdErr"?<p>An Error Occurred.<br/></p>:<></>}
+            {error === "pwdErrcode"?<p>Code Incorrect.<br/></p>:<></>}
+            {error === "update"?<p>Updating...<br/></p>:<></>}
+            {error == "pwdmsmatch"?<p>Password Doesn't Match!<br/></p>:<></>}
+
+            <br/>
+            <input ref={codeRef} type="text" placeholder='Enter Code'/><br/><br/>
             <small>Kindly Check Your Email For Access Code </small><br/><br/>
             <input ref={newpwdRef} type="password" placeholder='New Password'/><br/><br/>
             <input ref={connewpwdRef} type="password" placeholder='Confirm New Password'/><br/><br/>
             <br/><br/>
-            <button>Submit</button>
-            <br/><br/>
+            <button
+            onClick={async () => {
+                if(codeRef.current.value === "" || newpwdRef.current.value === "" || connewpwdRef.current.value === "")
+                return setError("all")
 
+                if(newpwdRef.current.value !== connewpwdRef.current.value)
+                return setError("pwdmsmatch")
+                
+                setError('update')
+                updateCode.email = email
+                updateCode.password = newpwdRef.current.value
+                updateCode.code = codeRef.current.value
+                console.log(updateCode)
+                var response = await changePassword(updateCode)
+                console.log(response)
+
+                if(response?.code === 200) { 
+                    setEmailCheck(false) ; 
+                    setForgotEmail(false); 
+                    setError("pwdchkd")
+                }
+                else if(response?.message.includes("Code"))
+                    {
+                      setError('pwdErrcode')
+                    }
+                else setError('pwdErr')
+
+            }}>Submit</button>
+            <br/><br/>
             <br/>
-            </>}
+            </div>}
         </div>
     )
 }

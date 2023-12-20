@@ -31,7 +31,7 @@
     }
 }
 
-#loginpage p{
+#loginpage p, #forgotPassword p, #updatepassword p{
     display: block;
     color: red;
     margin-top: -1em;

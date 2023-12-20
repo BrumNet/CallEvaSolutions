@@ -41,3 +41,41 @@ export async function signUp(data, pwd, privilege){
   console.log(error);
 });
 }
+
+export async function forgotPassword(data){
+  
+  const base = process.env.REACT_APP_BACKEND_URL;
+
+  return await axios.post(base  + "/forgotpassword", data, 
+  {
+  headers: { 
+    //'Authorization': "Bearer "+ bearer_token,
+    'Content-Type': 'application/json',
+  }
+}
+).then(function (response) {
+  return response.data
+})
+.catch(function (error) {
+  console.log(error);
+});
+}
+
+export async function changePassword(data){
+  
+  const base = process.env.REACT_APP_BACKEND_URL;
+
+  return await axios.post(base  + "/updatepassword", data, 
+  {
+  headers: { 
+    //'Authorization': "Bearer "+ bearer_token,
+    'Content-Type': 'application/json',
+  }
+}
+).then(function (response) {
+  return response.data
+})
+.catch(function (error) {
+  console.log(error);
+});
+}
