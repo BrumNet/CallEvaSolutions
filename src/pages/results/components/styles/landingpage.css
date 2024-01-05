@@ -40,8 +40,9 @@
 
 #backButton{
     border-radius: 0px;
-    background-color: rgba(0, 0, 255, 0.66);
+    background-color: black;
     margin-left: 5%;
+    text-align: center;
 }
 
 #servicepage  > div:nth-of-type(1)  button{

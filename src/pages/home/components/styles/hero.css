@@ -83,12 +83,16 @@
         display: none;
     }
 
+    .hero > div:nth-of-type(2){
+        top: 8%; 
+    }
+    
     .hero > div:nth-of-type(3){
-        top: 15%;
+        top: 8%;
         right: 5%;
         height: 300px;
     }
-    
+
     .hero p{
         margin-top: 5%;
         width: 60%;

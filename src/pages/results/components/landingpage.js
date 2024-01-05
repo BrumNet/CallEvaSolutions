@@ -24,6 +24,8 @@ export function ServicePage (props){
     const transactionId = short.uuid();
     const user = useSelector((state) => state.user.value)
 
+    console.log(props)
+    
     const executeMomo = async ()=>{
 
         changePrompt(true);
@@ -121,21 +123,20 @@ export function ServicePage (props){
                 </>:
                 <div id="servicepage">
                 <div>
-                    <div><img src={servicepic} alt="Service Picture"/></div>
+                    <div><img src={props.data.serviceprofilepic} alt="Service Picture"/></div>
                     
                     <br/>
                 </div>
                 <div>
                     <br/>
                     <LocationIcon/> | {props.data.city} {props.data.country}
-                    <h1>{props.data.packageName}</h1>
-                    <Verified/>  <br/>Verified<br/><br/>
-                    {props.data.detail}
-                    <br/><br/>
+                    <h3>{props.data.packageName}<Verified/></h3>  
+                    <small>{props.data.category}</small><br/><br/> 
+                    {/* {props.data.detail} */} 
                     {props.data?.availabity?JSON.parse(props.data?.availabity)[d.getDay()].join(" "):<></>}
                      <br/> 
                     
-
+                    <button onClick={() => executeMomo()}>{props.data.price.substring(3)} | Momo icon</button>
                     <br/>
                     <button onClick={() => executeMomo()}>{props.data.price} | Momo icon</button>
                 </div>

@@ -9,7 +9,8 @@ import { getReqServices } from './data/getReqServices'
 import { sessionData } from './data/alldata'
 import Cookies from 'js-cookie'
 import { Cancel } from '../../assets/cancel'
-import { Done } from '../../assets/done'
+import { Done } from '../../assets/done' 
+import { Cart } from '../../../results/components/assets/buy'
 
 export function RequestedServices (){
     const user = useSelector((state) => state.user.value)
@@ -76,8 +77,16 @@ export function RequestedServices (){
                         <td>{x["payment"]}</td>
 
                         <td>{x["status"]}</td>
-                        {/* <td>{x["date"]}</td> */}
-                        <td><button title='Revoke Service' onClick={()=>updateRequestStatus("Revoked", x["_id"])}><Cancel/></button></td>
+                        <td>
+                            {/* <td>{x["date"]}</td> */
+                            //delete service request upon revoking, assign service to another user.
+                        x["status"] === "Pending"
+                        ? <><button title='Accept Service' onClick={()=>updateRequestStatus("Accepted", x["_id"])}><Done/></button><button title='Revoke Service' onClick={()=>updateRequestStatus("Revoked", x["_id"])}><Cancel/></button></>
+                        : x["status"] === "Accepted" //notify admin
+                        ? <><button title='Request Payment' onClick={()=>updateRequestStatus("Completing", x["_id"])}><Cart/></button></>
+                        :<></>
+                        }
+                        </td>
                         </tr>
                     /**
                      Payment Status for payments
@@ -95,7 +104,7 @@ export function RequestedServices (){
                     <td>{x["serviceProviderEmail"]}</td>
                     <td>{x["status"]}</td>
                     {/* <td>{x["date"]}</td> */}
-                    <td><button onClick={()=>updateRequestStatus("Completed", x["_id"])} title="Click to suggest service completion"><Done/></button></td>{/**Change Pending to Rendered, Change Pending to  */}
+                    <td><button onClick={()=>updateRequestStatus("Completed", x["_id"])} title="Click to suggest service completion"><Done/></button></td>{/**Change Pending/Accepted to Rendered, Change Pending to  */}
                     </tr>
                 
                 )

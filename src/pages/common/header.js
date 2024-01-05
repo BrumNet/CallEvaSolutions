@@ -42,9 +42,11 @@ function NavSub (props){
 
                 <span>
                 {
-                user==="provider"
-                ?<Link to="/account">Login As A Customer</Link>
-                :<Link to="/account">Login As A Service Provider</Link>
+                //  sessionData?.profile?.name===undefined
+                // ?<Link to="/account">Login As A Service Provider</Link>
+                // :<Link to="/account">Login As A Service Provider</Link>
+                // :
+                sessionData?.profile?.name == undefined ? "Welcome" : "Welcome! " +  sessionData?.profile?.name.split(" ")[0] || ""
                 }
                 </span> 
                 <span><Link to="/categories">Categories</Link>

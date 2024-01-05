@@ -1,5 +1,6 @@
 import './styles/happiness.css'
 import happy from './assets/happy.jpg'
+import { Link } from 'react-router-dom'
 
 export function Happiness () {
     return <div className="happiness">
@@ -28,7 +29,7 @@ export function Happiness () {
                         the CallEva platform.
                     </p>
                     
-                    <button>Learn More...</button>
+                    <Link><button>Learn More...</button></Link>
                     </div>
                 </div>
            </div>

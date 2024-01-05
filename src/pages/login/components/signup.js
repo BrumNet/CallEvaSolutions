@@ -40,7 +40,8 @@ export function SignUp(props){
     //pwdRef.current.value
     const user = await signUp(signupForm, pwdRef.current.value, privilege )
 
-    //console.log(user)
+    console.log(user)
+    
     if(user?.code === 201) {
         setError("None"); 
         //alert("Your Account has been created. Kindly Login with your credentials");

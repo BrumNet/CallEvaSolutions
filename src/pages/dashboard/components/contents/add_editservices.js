@@ -37,7 +37,7 @@ export function AddService (props){
             }))
     }
 
-    const [subCategory, setSubCategory] = useState(category["All Services"])
+    const [subCategory, setSubCategory] = useState(category["Real Estate Booking"])
 
     useEffect(() => {
         if(!props?.data?.serviceprofilepic) setFile(defaultpic)

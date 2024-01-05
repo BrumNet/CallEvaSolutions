@@ -10,12 +10,16 @@ import { Category } from '../categories/components/category'
 export function Footer (){
     return  <div id="footer">
                 <section>
-                    <div><img src={picture} alt="logo" /></div>
-                    <div><Facebook/>   <Instagram/>   <Whatsapp/></div>
+                    <div>
+                        <Link>
+                            <img src={picture} alt="logo"/>
+                        </Link>
+                    </div>
+                    <div><Link><Facebook/></Link>   <Link><Instagram/></Link>   <Link><Whatsapp/></Link></div>
                 </section>
                 <section>
-                    <div>Policies</div>
-                    <div>Terms and Conditions</div>
+                    <div><Link>Policies</Link></div>
+                    <div><Link>Terms and Conditions</Link></div>
                 </section>
                 <section>
                     <div>
@@ -73,8 +77,8 @@ export function Footer (){
                 </section>
                 <section>
                     <div>
-                        <p>CallEva Solutions © Copyright @ 2023 - All Rights Reserved.</p>
-                        <p>Developed By <a href="http://www.victorthesaiyan.xyz" target='blank'> InfoTech Nexus </a></p>
+                        <p>CallEva Solutions <br/> © <br/> Copyright @ 2023 - All Rights Reserved.</p>
+                        <p>Developed By <a href="#" target='blank'> InfoTech Nexus </a></p>
                     </div>
                 </section>
             </div>
