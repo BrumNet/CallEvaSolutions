@@ -1,88 +1,88 @@
-#body{
-    min-height: 60vh;
-    width: 100%;
-    margin-top: 1em;
-    display: flex;
-    justify-content: space-evenly;
+#body {
+  min-height: 60vh;
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-#main{
-    min-width: 70%;
-    margin-right: 2.5%;
-    border: 1px solid orange;
-    min-height: 90%;
-    border-radius: 1.8em;
-    overflow: hidden;
+#main {
+  min-width: 70%;
+  margin-right: 2.5%;
+  border: 1px solid orange;
+  min-height: 90%;
+  border-radius: 1.8em;
+  overflow: hidden;
 }
 
-#sidebar{
-    width: 25%;
+#sidebar {
+  width: 25%;
 }
 
-#sidebar div{
-    margin-left: 1em ;
-    padding-left: 1em;
-    border-left: 1px solid orange;
-    max-height: 900px;
+#sidebar div {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 1px solid orange;
+  max-height: 900px;
 }
 
-#sidebar button{
-    min-width: 70%;
-    border-radius: 1.2em;
-    border: none;
-    padding: .8em;
-    margin-top: .5em;
-    margin-left: 0.5em ;
-    background-color: transparent;
-    text-align: left;
+#sidebar button {
+  min-width: 70%;
+  border-radius: 1.2em;
+  border: none;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  background-color: transparent;
+  text-align: left;
 }
 
-#sidebar .active{
-    background-color: orange;
+#sidebar .active {
+  background-color: orange;
 }
 
-#topbar > center{
-    position: relative;
+#topbar > center {
+  position: relative;
 }
-#topbar > center div{
-    position: absolute;
-    right: 50%;
-    transform: translate(50%, -15%);
-    width: 200px;
+#topbar > center div {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, -15%);
+  width: 200px;
+  display: none;
+  overflow-y: visible;
+  border: 1px solid black;
+  z-index: 5;
+  background-color: white;
+}
+#topbar > center:hover div {
+  display: block;
+}
+
+#topbar button {
+  background-color: white;
+  width: 100%;
+  border: none;
+  height: 50px;
+}
+
+#topbar button:hover {
+  background-color: orange;
+  min-width: 150px;
+}
+
+@media screen and (min-width: 1000px) {
+  #topbar {
     display: none;
-    overflow-y: visible;
-    border: 1px solid black;
-    z-index: 5;
-    background-color: white;
+  }
 }
-#topbar > center:hover div{
-    display: block;
-}
+@media screen and (max-width: 1000px) {
+  #sidebar {
+    display: none;
+  }
 
-#topbar button{
-    background-color: white;
-    width: 100%;
-    border: none;
-    height: 50px;
-}
-
-#topbar button:hover{
-    background-color: orange;
-    min-width: 150px;
-}
-
-@media screen and (min-width: 1000px){
-    #topbar{
-        display: none;
-    }
-}
-@media screen and (max-width: 1000px){
-    #sidebar{
-        display: none;
-    }
-    
-    #main{
-        margin: 0 2.5%;
-        min-width: 90%;
-    }   
+  #main {
+    margin: 0 2.5%;
+    min-width: 90%;
+  }
 }

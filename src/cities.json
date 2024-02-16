@@ -1,5 +1,6 @@
 {
-    "cities": ["Central Monrovia",
+  "cities": [
+    "Central Monrovia",
     "Sinkor",
     "Airfield",
     "Old Road",
@@ -11,5 +12,6 @@
     "Gardenersville",
     "Barnesville",
     "Caldwell",
-    "Brewerville"]
+    "Brewerville"
+  ]
 }

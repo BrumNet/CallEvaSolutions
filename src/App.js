@@ -1,13 +1,17 @@
 import React from 'react';
+
 import Home from './pages/home/home'
 import DashBoard from './pages/dashboard/dashboard';
 import Results from './pages/results/results';
 import Categories from './pages/categories/categories'
 import LandingPage from './pages/landing/landingpage';
+import { Sign } from './pages/login/sign';
+import { Cart } from './pages/cart/cart';
+
 import {createBrowserRouter, ScrollRestoration} from "react-router-dom";
 
 import './App.css';
-import { Sign } from './pages/login/sign';
+
 
 
   const router = createBrowserRouter([
@@ -30,6 +34,9 @@ import { Sign } from './pages/login/sign';
     },
     {
       path: '/categories', element: <><Categories/><ScrollRestoration/></>
+    },
+    {
+      path: '/cart', element: <><Cart/><ScrollRestoration/></>
     },
     {
       path: '/*', element:  <><Home/><ScrollRestoration /></>

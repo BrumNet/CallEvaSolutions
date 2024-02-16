@@ -1,1 +1,1 @@
-export const previousResults = []
+export const previousResults = [];

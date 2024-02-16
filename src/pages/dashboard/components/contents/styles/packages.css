@@ -1,67 +1,66 @@
-.packages > div:nth-of-type(1) > div:nth-of-type(1)  {
-    margin: 5em 0em 0em 5em; 
-    float: left;
+.packages > div:nth-of-type(1) > div:nth-of-type(1) {
+  margin: 5em 0em 0em 5em;
+  float: left;
 }
 /*profile*/
-.packages > div:nth-of-type(1) > div:nth-of-type(2)  {
-    float: right;
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    border-radius: 50%;
-    margin-right: 3em;
-    margin-top: 3em;
+.packages > div:nth-of-type(1) > div:nth-of-type(2) {
+  float: right;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border-radius: 50%;
+  margin-right: 3em;
+  margin-top: 3em;
 }
 
 .packages img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  
-.packages hr{
-    width: 150px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.packages hr {
+  width: 150px;
 }
 
 .packages > div:nth-of-type(2) {
+  clear: both;
+  display: flex;
+  padding: 5em;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.packages > div:nth-of-type(2) div {
+  border: 1px solid orange;
+  border-radius: 1.2em;
+  padding: 0.8em;
+  margin-bottom: 3em;
+}
+
+.packages button {
+  margin-top: 1.5em;
+  background-color: black;
+  padding: 1em 2em;
+  border-radius: 1.2em;
+  color: white;
+  min-width: 100px;
+}
+
+.packages .active {
+  background-color: orange;
+}
+
+@media screen and (max-width: 1000px) {
+  .packages > div:nth-of-type(1) > div:nth-of-type(1) {
+    margin: 5em 0em 0em 50%;
+    transform: translate(-50%, 0);
+  }
+  /*profile*/
+  .packages > div:nth-of-type(1) > div:nth-of-type(2) {
     clear: both;
-    display: flex;
-    padding: 5em;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.packages > div:nth-of-type(2) div{
-    border: 1px solid orange;
-    border-radius: 1.2em;
-    padding: 0.8em;
-    margin-bottom: 3em;
-}
-
-.packages button{
-    margin-top: 1.5em;
-    background-color: black;
-    padding: 1em 2em;
-    border-radius: 1.2em;
-    color: white;
-    min-width: 100px;
-}
-
-.packages .active{
-    background-color: orange;
-}
-
-@media screen and (max-width: 1000px ) {
-    .packages > div:nth-of-type(1) > div:nth-of-type(1)  {
-        margin: 5em 0em 0em 50%; 
-        transform: translate(-50%, 0);
-    }
-    /*profile*/
-    .packages > div:nth-of-type(1) > div:nth-of-type(2)  {
-        clear: both;    
-        margin-right: 50%;
-        transform: translate(50%, 0);
-    }
+    margin-right: 50%;
+    transform: translate(50%, 0);
+  }
 }

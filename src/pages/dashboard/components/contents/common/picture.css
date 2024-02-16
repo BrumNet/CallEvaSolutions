@@ -1,18 +1,18 @@
 #imagecontainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  #picture{
-    background-color: black;
-    padding: 0.5em 1em;
-    border-radius: 3em;
-    color: white;
-    font-size: small;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-#filebutton{
+#picture {
+  background-color: black;
+  padding: 0.5em 1em;
+  border-radius: 3em;
+  color: white;
+  font-size: small;
+}
+
+#filebutton {
   display: none;
 }

@@ -1,99 +1,162 @@
-import './style/nav.css'
-import {Menu} from './assets/menu.js'
-import {Account} from './assets/account.js'
-import picture from './assets/logo.png'
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import "./style/nav.css";
+import { Menu } from "./assets/menu.js";
+import { Account } from "./assets/account.js";
+import picture from "./assets/logo.png";
 
 import { Link } from "react-router-dom";
-import {useDispatch, useSelector } from 'react-redux';
-import { setdefault } from '../../redux/feature'
-// import categories from '../../categories.json'
+import { useDispatch, useSelector } from "react-redux";
+import { setdefault } from "../../redux/feature";
 
-import { sessionData } from '../dashboard/components/contents/data/alldata';
-import Cookies from 'js-cookie'
+import { sessionData } from "../dashboard/components/contents/data/alldata";
+import Cookies from "js-cookie";
 
-import { useRef, useState } from 'react';
-import { Phone } from './assets/phone';
-//import logo from ./
+import React, { useRef} from "react";
+import { Phone } from "./assets/phone";
+import { Cart } from "../results/components/assets/buy";
 
-export function Nav(props) {
+function logout (){
+  
+    const dispatch = useDispatch();
 
-    return <div id="navblack"  className="navparent">
-                <NavSub pass={props.setQuery}/><NavSmall/>
-            </div>
+    Array.from(Object.keys(sessionData)).forEach(x => delete sessionData[x]);
+    
+    dispatch(setdefault());
+
+    Cookies.remove("email");
+    Cookies.remove("token");
 }
 
-export function NavW(props) {
-
-    return <div id="navwhite" className="navparent">
-                <NavSub  pass={props.setQuery}/><NavSmall/>
-            </div>
+const Nav = (props) => {
+  return (
+    <div id="navblack" className="navparent">
+      <NavSub pass={props.setQuery} />
+      <NavSmall />
+    </div>
+  );
 }
 
-function NavSub (props){
+const NavW = (props) => {
+  return (
+    <div id="navwhite" className="navparent">
+      <NavSub pass={props.setQuery} />
+      <NavSmall />
+    </div>
+  );
+}
 
-    const dispatch = useDispatch()
-    const spanRef = useRef()
+const NavSub = () => {
+  const spanRef = useRef();
 
-    const user = useSelector((state) => state.user.value)
-    const setSearch = (x) => {Cookies.set('url',x); spanRef.current.click()}
+  const user = useSelector((state) => state.user.value);
 
-    return <div> 
-            <div>
+  return (
+    <div>
+      <div>
+        <span>
+          {
+            user === undefined
+            ? "Welcome" + {user}
+            : "Welcome! " + sessionData?.profile?.name.split(" ")[0] || "" + {user}
+          }
+        </span>
+        
+        <span>
+          <Link to="/categories">Categories</Link>
+        </span>
 
-                <span>
-                {
-                //  sessionData?.profile?.name===undefined
-                // ?<Link to="/account">Login As A Service Provider</Link>
-                // :<Link to="/account">Login As A Service Provider</Link>
-                // :
-                sessionData?.profile?.name == undefined ? "Welcome" : "Welcome! " +  sessionData?.profile?.name.split(" ")[0] || ""
-                }
-                </span> 
-                <span><Link to="/categories">Categories</Link>
-                    {/* {</div>div id="cat">{Array.from(Object.keys(categories)).map((x) => <><p style={{color: "black"}} onClick={(e) => setSearch(e.target.innerHTML)}>{x}</p> </>)}</div> */}
-                    </span>
-                
-            </div>
+        <span>
+          <Link to="/cart">My Cart</Link>
+        </span>
+      </div>
 
-            <div>
-                <center><Link to="/"><img src={picture} alt="logo" /></Link></center>
-            </div>
+      <div>
+        <center>
+          <Link to="/"><img src={picture} alt="logo" /></Link>
+        </center>
+      </div>
 
-            <div>
-                <span>{user==="undefined"?<Link to="/account">Login / SignUp</Link>:<Link to="/dashboard">My Account</Link>}</span>
-                <span>{
-                user==="undefined"?""
-                :<Link to="/"  onClick={() => {Array.from(Object.keys(sessionData)).forEach((x) => delete sessionData[x]); dispatch(setdefault()); Cookies.remove("email"); Cookies.remove("token")}}>Logout</Link>}</span>
-                <a href='tel:+231886144144'><span style={{color: 'orange'}}>+231 88 614 4144 <Phone/></span></a>
-                
-                <Link to="/browse"><span ref={spanRef}></span></Link>
-            </div>
+      <div>
+        <span>
+          {
+            user === "undefined" 
+            ? <Link to="/account">Login / SignUp</Link>
+            : <Link to="/dashboard">My Account</Link>
+          }
+        </span>
+
+        <span>
+          {
+            user === "undefined" ? ""
+            : <Link to="/" onClick={() => logout()}>Logout</Link>
+          }
+        </span>
+
+        <a href="tel:+231886144144">
+          <span style={{ color: "orange" }}>+231 88 614 4144 <Phone /></span>
+        </a>
+
+        <Link to="/browse"><span ref={spanRef}></span></Link>
+
+      </div>
+    </div>
+  );
+}
+
+const NavSmall = () => {
+  const user = useSelector((state) => state.user.value);
+
+  return (
+    <div>
+      <div>
+        <Menu />
+
+        <div>
+          <button>
+            {
+              user === "provider" 
+              ? <Link to="/account">Login As A Customer</Link>
+              : <Link to="/account">Login As A Service Provider</Link>
+            }
+          </button>{" "}<br />
+
+          <button><Link to="/categories">Categories</Link></button>
         </div>
+      </div>
+
+      <div>
+        <center>
+          <Link to="/"> <img src={picture} alt="logo" /></Link>
+        </center>
+      </div>
+
+      <div>
+        <Cart/>
+        <Account />
+        <div>
+          <button>
+            {
+              user === "undefined" 
+              ? <Link to="/account">Login / SignUp</Link>
+              : <Link to="/dashboard">My Account</Link>
+            }
+          </button><br />
+
+          {
+            user === "undefined" ?""
+            :(
+                <button>
+                  <Link to="/" onClick={() => logout()}>
+                    Logout
+                  </Link>
+                </button>
+             )
+          }
+        </div>
+      </div>
+    </div>
+  );
 }
 
-function NavSmall (){
-
-    const user = useSelector((state) => state.user.value)
-    const dispatch = useDispatch()
-
-    return  <div> 
-                <div><Menu/>
-                <div>
-                <button>{
-                user==="provider"
-                ?<Link to="/account">Login As A Customer</Link>
-                :<Link to="/account">Login As A Service Provider</Link>}</button> <br/>
-                <button><Link to="/categories">Categories</Link></button>
-                </div>
-                </div>
-                <div><center><Link to="/"><img src={picture} alt="logo" /></Link></center></div>
-                <div><Account/>
-                    <div>
-                    <button>{user==="undefined"?<Link to="/account">Login / SignUp</Link>:<Link to="/dashboard">My Account</Link>}</button><br/>
-                    {user==="undefined"
-                    ?""
-                    :<button><Link to="/"  onClick={() => {Array.from(Object.keys(sessionData)).forEach((x) => delete sessionData[x]); dispatch(setdefault()); Cookies.remove("email"); Cookies.remove("token")}}>Logout</Link></button>}
-                    </div>
-                </div>
-            </div>
-}
+export {Nav, NavW}

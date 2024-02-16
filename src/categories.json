@@ -1,20 +1,25 @@
 {
-"Real Estate Booking":["Hotels","Apartment","House","Stores","Warehouse"],
-"Car Rental Services":[""],
-"Delivery Services" :[""],
-"Plumber" :[""],
-"Electrician":[""],
-"Contractor":[""],
-"Architect":[""],
-"Painter":[""],
-"Mechanic":[""],
-"House Keeping Services" :[""],
-"Security Services":[""],
-"Roof Repair Services":[""],
-"AC Repair":[""],
-"Gardener" :[""],
-"Website Development":[""],
-"Carpenter":[""],
-"All Services":[""]
+  "Real Estate Booking": [
+    "Hotels",
+    "Apartment",
+    "House",
+    "Stores",
+    "Warehouse"
+  ],
+  "Car Rental Services": [""],
+  "Delivery Services": [""],
+  "Plumber": [""],
+  "Electrician": [""],
+  "Contractor": [""],
+  "Architect": [""],
+  "Painter": [""],
+  "Mechanic": [""],
+  "House Keeping Services": [""],
+  "Security Services": [""],
+  "Roof Repair Services": [""],
+  "AC Repair": [""],
+  "Gardener": [""],
+  "Website Development": [""],
+  "Carpenter": [""],
+  "All Services": [""]
 }
- 

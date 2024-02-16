@@ -1,79 +1,78 @@
-#login{
-    min-height: 100vh;
-    background-color: black;
-    padding-top: 5%;
+#login {
+  min-height: 100vh;
+  background-color: black;
+  padding-top: 5%;
 }
 
-#login > center > div{
-    width: 60%;
-    display: flex;
-    min-height: 30vh;
-    flex-wrap: wrap;
+#login > center > div {
+  width: 60%;
+  display: flex;
+  min-height: 30vh;
+  flex-wrap: wrap;
 }
 
-#loginleft{
-    padding-top: 3%;
-    background-color: rgb(237, 202, 139);
-    width: 50%;
-    min-height: 100%;
-    border-radius: 2em 0em 0em 2em;
+#loginleft {
+  padding-top: 3%;
+  background-color: rgb(237, 202, 139);
+  width: 50%;
+  min-height: 100%;
+  border-radius: 2em 0em 0em 2em;
 }
 
-#loginleft button{
-    clear: both;
-    float: right;
-    background-color: transparent;
-    border: none;
-    border-radius: 1em 0em 0em 1em; 
-    min-width: 100px;
-    height: 3em;
+#loginleft button {
+  clear: both;
+  float: right;
+  background-color: transparent;
+  border: none;
+  border-radius: 1em 0em 0em 1em;
+  min-width: 100px;
+  height: 3em;
 }
 
-#login .activepage{
-    background-color: white;
+#login .activepage {
+  background-color: white;
 }
 
-#loginleft > div:nth-of-type(3){
-    clear: both;
-    margin-top: 20%;
+#loginleft > div:nth-of-type(3) {
+  clear: both;
+  margin-top: 20%;
 }
 
-
-#loginright{
-    background-color: white;
-    width: 50%;
-    min-height: 100%;
-    border-radius: 0em 2em 2em 0em;
+#loginright {
+  background-color: white;
+  width: 50%;
+  min-height: 100%;
+  border-radius: 0em 2em 2em 0em;
 }
 
 @media screen and (max-width: 1000px) {
-    #login > center > div{
-        width: 95%;
-        display: flex;
-        min-height: 30vh;
-    }
+  #login > center > div {
+    width: 95%;
+    display: flex;
+    min-height: 30vh;
+  }
 }
 
 @media screen and (max-width: 700px) {
-    #loginleft > div:nth-of-type(1)  button{
-        margin-top: 2em;
-    }
-    #loginleft > div:nth-of-type(2)  button{
-        margin-bottom: 1em;
-    }
-    #loginleft{
-        width: 100%;
-        border-radius: 2em 2em 0em 0em;
-    }
-    #loginright{
-        width: 100%;
-        border-radius: 0em 0em 2em 2em;
-    }
-    #loginleft > div:nth-of-type(3){
-        clear: none;
-        margin: 1em 0em;
-    }
-    #loginleft > div:nth-of-type(3) img{
-        width: 100px;
-    }
+  #loginleft > div:nth-of-type(1) button {
+    margin-top: 2em;
+  }
+  #loginleft > div:nth-of-type(2) button {
+    margin-bottom: 1em;
+  }
+  #loginleft {
+    width: 100%;
+    border-radius: 2em 2em 0em 0em;
+  }
+  #loginright {
+    width: 100%;
+    border-radius: 0em 0em 2em 2em;
+  }
+  #loginleft > div:nth-of-type(3) {
+    clear: none;
+    margin: 1em 0em;
+  }
+  #loginleft > div:nth-of-type(3) img {
+    width: 100px;
+  }
 }

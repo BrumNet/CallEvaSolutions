@@ -1,52 +1,52 @@
-.search{
-    background-color: orange;
-    padding: .5em 10%;
+.search {
+  background-color: orange;
+  padding: 0.5em 10%;
 }
 
-.search div{
-    width: 100%;
-    display: flex;
+.search div {
+  width: 100%;
+  display: flex;
 }
 
-.search select, .search select:focus{
-    background-color: orange;
-    color: white;
-    height: 3em;
-    width: 25%;
-    border: 1px solid white;
-    border-left: none;
-    border-bottom-left-radius: 0.1em;
+.search select,
+.search select:focus {
+  background-color: orange;
+  color: white;
+  height: 3em;
+  width: 25%;
+  border: 1px solid white;
+  border-left: none;
+  border-bottom-left-radius: 0.1em;
 }
 
-
-.search input{
-    height: 2.83em;
-    width: 70%;
-    border: none;
+.search input {
+  height: 2.83em;
+  width: 70%;
+  border: none;
 }
 
-.search button:nth-of-type(odd){
-    background-color: orange;
-    height: 3em;
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
-    border: 1px solid white;
-    border-right: none;
+.search button:nth-of-type(odd) {
+  background-color: orange;
+  height: 3em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border: 1px solid white;
+  border-right: none;
 }
-.search button:nth-of-type(even){
-    height: 3em;
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
-    border: none;
+.search button:nth-of-type(even) {
+  height: 3em;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border: none;
 }
 
-@media screen  and (max-width: 1000px){
-    .search button:nth-of-type(odd){
-        border-top-left-radius: 0em;
-        border-bottom-left-radius: 0em;
-    }
-    .search button:nth-of-type(even){
-        border-top-right-radius: 0em;
-        border-bottom-right-radius: 0em;
-    }
+@media screen and (max-width: 1000px) {
+  .search button:nth-of-type(odd) {
+    border-top-left-radius: 0em;
+    border-bottom-left-radius: 0em;
+  }
+  .search button:nth-of-type(even) {
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
+  }
 }

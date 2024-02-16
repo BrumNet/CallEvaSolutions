@@ -1,32 +1,30 @@
-
-table{
-    margin-top: 3em;
-    width: 90%;
-    border-collapse: collapse;
-    text-align: center;
-    margin-bottom: 2em;
+table {
+  margin-top: 3em;
+  width: 90%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 2em;
 }
 
-thead td{
-    border-bottom: 1px solid #000000;
-    background-color: black;
-    color: white;
-    padding: 0.3em;
+thead td {
+  border-bottom: 1px solid #000000;
+  background-color: black;
+  color: white;
+  padding: 0.3em;
 }
-tbody td{
-    padding-top: .8em;
+tbody td {
+  padding-top: 0.8em;
 }
 
 @media screen and (max-width: 1000px) {
-    .req_service{
-        overflow-y: scroll;
-        padding: 0.5em;
-    }
-    
+  .req_service {
+    overflow-y: scroll;
+    padding: 0.5em;
+  }
 }
 
-table button{
-    background-color: transparent;
-    color: red;
-    border: none;
+table button {
+  background-color: transparent;
+  color: red;
+  border: none;
 }

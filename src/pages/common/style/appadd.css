@@ -1,32 +1,33 @@
-.appadd{
-    margin: 5em 0em;
-    min-height: 50vh
+.appadd {
+  margin: 5em 0em;
+  min-height: 50vh;
 }
 
-#applink, .appadd h4{
-    margin-left: 20%;
+#applink,
+.appadd h4 {
+  margin-left: 20%;
 }
 
-#applink img{
-    width: 200px;
-    height: 70px;
-    border-radius: 0.6em;
-    margin-right: 0.5em;
+#applink img {
+  width: 200px;
+  height: 70px;
+  border-radius: 0.6em;
+  margin-right: 0.5em;
 }
 #phoneimage img {
-    margin-top: 1em;
-    width: 400px;
-    object-fit: cover;
-    border-radius: 1.2em;
+  margin-top: 1em;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 1.2em;
 }
-  
 
-  @media screen and (max-width: 500px) {
-    #phoneimage img {
-        width: 95%;
-        margin-left: 2.5%;
-      }
-      #applink, .appadd h4{
-        margin-left: 0%;
-    }
+@media screen and (max-width: 500px) {
+  #phoneimage img {
+    width: 95%;
+    margin-left: 2.5%;
   }
+  #applink,
+  .appadd h4 {
+    margin-left: 0%;
+  }
+}

@@ -1,152 +1,160 @@
-#navwhite{
-    background-color: white;
-    color: black;
+#navwhite {
+  background-color: white;
+  color: black;
 }
 
-#navwhite a, #navwhite a:visited, #navwhite a:active{
- color: black;
- text-decoration: none;
+#navwhite a,
+#navwhite a:visited,
+#navwhite a:active {
+  color: black;
+  text-decoration: none;
 }
 
-#navblack{
-    background-color: black;
-    color: white;
+#navblack {
+  background-color: black;
+  color: white;
 }
 
-#navblack a, #navblack a:visited, #navblack a:active{
-    color: white;
-    text-decoration: none;
-   }
-#navblack #cat a{
-    color: black;
+#navblack a,
+#navblack a:visited,
+#navblack a:active {
+  color: white;
+  text-decoration: none;
+}
+#navblack #cat a {
+  color: black;
 }
 
-.navparent{
-    position: relative;
-    padding: 2em 0;
+.navparent {
+  position: relative;
+  padding: 2em 0;
 }
 
-.navparent img{
-    position: absolute;
-    top: -40px;
-    height: 48px;
+.navparent img {
+  position: absolute;
+  top: -40px;
+  height: 48px;
 }
 
-.navparent > div:nth-of-type(1) div:nth-of-type(1){
-    min-width: 38%;
-    display: inline-block;
+.navparent > div:nth-of-type(1) div:nth-of-type(1) {
+  min-width: 38%;
+  display: inline-block;
 }
-.navparent > div:nth-of-type(1) div:nth-of-type(2){
-    position: relative;
-    width: 20%;
-    display: inline-block;
+.navparent > div:nth-of-type(1) div:nth-of-type(2) {
+  position: relative;
+  width: 20%;
+  display: inline-block;
 }
-.navparent > div:nth-of-type(1) div:nth-of-type(3){
-    position: absolute;
-    right: 1em;
-    display: inline-block;
+.navparent > div:nth-of-type(1) div:nth-of-type(3) {
+  position: absolute;
+  right: 1em;
+  display: inline-block;
 }
-.navparent span{
-    margin-left: 2em;
-    position: relative;
+.navparent span {
+  margin-left: 2em;
+  position: relative;
 }
-#cat{
-    display: none;
-    background-color: rgba(255, 255, 255, 1);
-    position: absolute;
-    width: 300%;
-    margin-left: 350%;
-    margin-top: -1em;
-    z-index: 7; 
-}
-
-span:hover > #cat{
-    display: block;
-    max-height: 600px;
-    overflow-y: scroll;
+#cat {
+  display: none;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  width: 300%;
+  margin-left: 350%;
+  margin-top: -1em;
+  z-index: 7;
 }
 
-span:hover > #cat > p{
-    padding: 0.5em;
+span:hover > #cat {
+  display: block;
+  max-height: 600px;
+  overflow-y: scroll;
 }
-span:hover > #cat > p:hover{
-    background-color: orange;
+
+span:hover > #cat > p {
+  padding: 0.5em;
+}
+span:hover > #cat > p:hover {
+  background-color: orange;
 }
 /*NAV SMALL*/
-.navparent > div:nth-of-type(2){
-    display: flex;
+.navparent > div:nth-of-type(2) {
+  display: flex;
 }
 
-.navparent > div:nth-of-type(2) div:nth-of-type(1),.navparent > div:nth-of-type(2) div:nth-of-type(2){
-    width: 33.3%;
+.navparent > div:nth-of-type(2) div:nth-of-type(1),
+.navparent > div:nth-of-type(2) div:nth-of-type(2) {
+  width: 33.3%;
 }
 
-.navparent > div:nth-of-type(2) div:nth-of-type(1){
-    position: relative;
+.navparent > div:nth-of-type(2) div:nth-of-type(1) {
+  position: relative;
 }
 
-.navparent > div:nth-of-type(2) div:nth-of-type(3){
-    position: absolute;
-    right: 3%;
+.navparent > div:nth-of-type(2) div:nth-of-type(3) {
+  position: absolute;
+  right: 3%;
 }
-.navparent > div:nth-of-type(2) > div:nth-of-type(1) div, .navparent > div:nth-of-type(2) > div:nth-of-type(3) div {
-    display: none;
+.navparent > div:nth-of-type(2) > div:nth-of-type(1) div,
+.navparent > div:nth-of-type(2) > div:nth-of-type(3) div {
+  display: none;
 }
 
-.navparent > div:nth-of-type(2) > div:nth-of-type(1):hover div, .navparent > div:nth-of-type(2) > div:nth-of-type(3):hover div {
-    position: absolute;
-    display: block;
-    min-width: 200px;
-    border: 1px solid black;
-    z-index: 2;
-    background-color: white;
-    margin: 0;
+.navparent > div:nth-of-type(2) > div:nth-of-type(1):hover div,
+.navparent > div:nth-of-type(2) > div:nth-of-type(3):hover div {
+  position: absolute;
+  display: block;
+  min-width: 200px;
+  border: 1px solid black;
+  z-index: 2;
+  background-color: white;
+  margin: 0;
 }
 
 .navparent > div:nth-of-type(2) > div:nth-of-type(3):hover div {
-    right: -100%;
+  right: -100%;
 }
 
-.navparent > div:nth-of-type(2) > div:nth-of-type(1) div button, .navparent > div:nth-of-type(2) > div:nth-of-type(3) button {
-    width: 100%;
-    text-align: left;
-    border: none;
-    background-color: transparent;
-    margin: 0;
-    height: 30px;
+.navparent > div:nth-of-type(2) > div:nth-of-type(1) div button,
+.navparent > div:nth-of-type(2) > div:nth-of-type(3) button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  height: 30px;
 }
 
-.navparent > div:nth-of-type(2) > div:nth-of-type(1) div button:hover, .navparent > div:nth-of-type(2) > div:nth-of-type(3) button:hover{
-    background-color: orange;
+.navparent > div:nth-of-type(2) > div:nth-of-type(1) div button:hover,
+.navparent > div:nth-of-type(2) > div:nth-of-type(3) button:hover {
+  background-color: orange;
 }
 
-
-
-@media screen and (min-width: 1000px){
-    .navparent > div:nth-of-type(2){
-        display: none;
-    }
+@media screen and (min-width: 1000px) {
+  .navparent > div:nth-of-type(2) {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 1000px){
-    #navblack{
-        background-color: white;
-        color: black;
-        padding-left: 5%;
-    }
-    #navblack a, #navblack a:visited, #navblack a:active{
-        color: black;
-        text-decoration: none;
-       }
-    .navparent > div:nth-of-type(1){
-        display: none;
-    }
-    .navparent img{
-        position: relative;
-        top: 0px;
-    }
+@media screen and (max-width: 1000px) {
+  #navblack {
+    background-color: white;
+    color: black;
+    padding-left: 5%;
+  }
+  #navblack a,
+  #navblack a:visited,
+  #navblack a:active {
+    color: black;
+    text-decoration: none;
+  }
+  .navparent > div:nth-of-type(1) {
+    display: none;
+  }
+  .navparent img {
+    position: relative;
+    top: 0px;
+  }
 }
-
 
 /*Black Menu for tables
 @media screen and (max-width: 700px){

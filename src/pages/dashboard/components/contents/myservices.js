@@ -1,69 +1,88 @@
-import { Picture } from './common/picture'
-import { useEffect, useState } from 'react'
+/* eslint-disable react/prop-types */
+import { Picture } from "./common/picture";
 
-import { getServices } from './data/getServices';
-import { sessionData } from './data/alldata';
-import Cookies from 'js-cookie'
+import React, { useEffect, useState } from "react";
 
-export function MyServices(props){
+import { getServices } from "./data/getServices";
+import { sessionData } from "./data/alldata";
 
-    const [xdata, setData] = useState({});
-    const email = Cookies.get('email');    
+import Cookies from "js-cookie";
 
-    const getData = async () => {
-        let getMyServices = sessionData["MyServices"]
+export const MyServices = (props) => {
 
-        if(!getMyServices) {
-            const details = await getServices(email)
-            sessionData["MyServices"] = details
-            //Cookies.set("myservices" , JSON.stringify(details))
-            setData(details)
-        }
+  const [xdata, setData] = useState({});
 
-        else{
-            setData(sessionData["MyServices"])
-        }   
+  const email = Cookies.get("email");
 
-    }
-    //TODO: if redux getStatechanged
-    useEffect(() => { getData() },[] );
+  const serviceColumns = ["","Service","Category","Sub Category", "Price","City", "Actions"]
 
-    return  <div>
-        <div><Picture/></div>
-        <center className="req_service">
+  async function getData() {
+    //let getMyServices = sessionData["MyServices"];
+
+    //if (!getMyServices) {
+      const details = await getServices(email);
+      sessionData["MyServices"] = details;
+      setData(details);
+    // } 
+    // else {
+    //   setData(sessionData["MyServices"]);
+    // }
+  }
+  
+  //TODO: if redux getStatechanged
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return (
+    <div>
+      <div>
+        <Picture />
+      </div>
+
+      <center className="req_service">
         {
-        xdata==null
-        ?<></>
-        :<table>
-            <thead>
+          xdata == null 
+          ? <></>
+          : 
+            <table>
+              <thead>
                 <tr>
-                {
-                ["","Service","Category","Sub Category","Price","City","Actions"].map(x => <td>{x}</td>)
-                }
+                  {serviceColumns.map((x,i) => <td key={i}>{x}</td>)}
                 </tr>
-                
-            </thead>
-            
-            <tbody>
-                {
-                    xdata.length === 0?
-                    <tr><td colSpan={6}><center><h4>Loading</h4></center></td></tr>
-                    : Array.from(xdata).map((x,i) => <tr>
+              </thead>
+
+              <tbody>
+                {xdata.length === 0 ? (
+                  <tr>
+                    <td colSpan={6}>
+                      <center>
+                        <h4>Loading</h4>
+                      </center>
+                    </td>
+                  </tr>
+                ) : (
+                  Array.from(xdata).map(
+                    (x, i) => (
+                      <tr key={i}>
                         <td>{i + 1}. </td>
                         <td>{x["packageName"]}</td>
                         <td>{x["category"]}</td>
                         <td>{x["subCategory"]}</td>
                         <td>{x["price"]}</td>
                         <td>{x["city"]}</td>
-                        <td><button onClick={()=> props.change(x)}>Edit</button><button id={"delete"+x["_id"]}>Delete</button></td>
-                    </tr>
-                    /**,"providerEmail":"info@lenovo.com","packageName":"Computing","category":"Electronics","subCategory":"Sales","time":"23:50","price":"12:30","country":"Ghana","city":"Accra */
-                    )
-                }
-                
-            </tbody>
-        </table>
+                        <td>
+                          <button onClick={() => props.change(x)}>Edit</button>
+                          <button id={"delete" + x["_id"]}>Delete</button>
+                        </td>
+                      </tr>
+                    ),
+                  )
+                )}
+              </tbody>
+            </table>
         }
-            </center>
-            </div>
+      </center>
+    </div>
+  );
 }

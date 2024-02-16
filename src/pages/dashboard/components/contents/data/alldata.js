@@ -1,3 +1,4 @@
-const sessionData = {}
+const sessionData = {};
 
-exports.sessionData = sessionData
+const _sessionData = sessionData;
+export { _sessionData as sessionData };

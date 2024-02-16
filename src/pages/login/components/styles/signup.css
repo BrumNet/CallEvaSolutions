@@ -1,66 +1,66 @@
-#signuppage{
-    padding: 2em 0em;
+#signuppage {
+  padding: 2em 0em;
 }
 
-#signuppage button, #signuppage input {
-    height: 2.5em;
+#signuppage button,
+#signuppage input {
+  height: 2.5em;
 }
 
 #signuppage input {
-    border: 0.1em solid rgb(106, 82, 82);
+  border: 0.1em solid rgb(106, 82, 82);
 }
 
-#signuppage input{
-    border-radius: 1em;
-    margin-right: 0.5em;
+#signuppage input {
+  border-radius: 1em;
+  margin-right: 0.5em;
 }
 
-#signuppage button{
-    border-radius: 1em 0em 0em 1em;
-    border: none;
-    min-width: 100px;
+#signuppage button {
+  border-radius: 1em 0em 0em 1em;
+  border: none;
+  min-width: 100px;
 }
 
-
-#signuppage > center button:nth-of-type(1){
-    border-radius: 1em 0em 0em 1em;
+#signuppage > center button:nth-of-type(1) {
+  border-radius: 1em 0em 0em 1em;
 }
 
-#signuppage > center button:nth-of-type(2){
-    border-radius: 0em 1em 1em 0em;
+#signuppage > center button:nth-of-type(2) {
+  border-radius: 0em 1em 1em 0em;
 }
 
-#signuppage > button{
-    border-radius: 1em;
-    min-width: 70%;
-    background-color: orange;
+#signuppage > button {
+  border-radius: 1em;
+  min-width: 70%;
+  background-color: orange;
 }
 
-#signuppage > *{
-    margin-bottom: 1em;
-    margin-bottom: 1em;
+#signuppage > * {
+  margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
-#signuppage > * > input:nth-of-type(1){
-    margin-bottom: 1em;
-    margin-bottom: 1em;
+#signuppage > * > input:nth-of-type(1) {
+  margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
-#signuppage > div span{
-    margin: 0em 1em;
+#signuppage > div span {
+  margin: 0em 1em;
 }
 
 #signuppage p {
-    color: red;
+  color: red;
 }
 
-.logactive{
-    background-color: black;
-    color: orange;
+.logactive {
+  background-color: black;
+  color: orange;
 }
 
 @media screen and (max-width: 700px) {
-    #signuppage > center:nth-of-type(1){
-        display: none;
-    }
+  #signuppage > center:nth-of-type(1) {
+    display: none;
+  }
 }

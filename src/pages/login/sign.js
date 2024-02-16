@@ -1,43 +1,69 @@
-import './styles/sign.css'
-
-import { Login } from './components/login'
-import { useState } from 'react'
-
-import { SignUp } from './components/signup';
-import { Link } from 'react-router-dom';
-import picture from '../common/assets/logo.png' 
+import "./styles/sign.css";
 
 
-export function Sign ()  {//pass
+import React, { useState } from "react";
 
-    const [log, setLog] = useState("login");
-    const [signedUp, setSignedUp] = useState(false)
+import { Link } from "react-router-dom";
 
-    const changeState = () => {
-        setSignedUp(true)
-        setLog("login")
-    } 
+import { SignUp } from "./components/signup";
+import { Login } from "./components/login";
 
-    return(
+import picture from "../common/assets/logo.png";
 
-        <div id="login">
-            <center>
-                <div>
-                    <div id="loginleft">
-                        {signedUp ? <>Account Created! <br/></> : <></>}
-                        <div><button onClick={()=> {setLog("login")}} className={log === "login"?'activepage':''}>Login</button></div><br/>
-                        
-                        <div><button onClick={()=> {setLog("signup")}} className={log === "signup"?'activepage':''}>SignUp</button></div>
-                        <div><Link to="/"><img src={picture} alt="logo" /></Link></div>
-                    </div>
-                    
-                    <div id="loginright">
-                       { //x ? <Login/>:
-                        log === "signup"?<SignUp change={changeState}/>:<Login/>}
-                    </div>
-                </div>
-            </center>
+export const Sign = () => { 
+
+  const [log, setLog] = useState("login");
+  const [signedUp, setSignedUp] = useState(false);
+
+  function changeState(){
+    setSignedUp(true);
+    setLog("login");
+  }
+
+  return (
+    <div id="login">
+      <center>
+        <div>
+          <div id="loginleft">
+            {
+              signedUp 
+              ? <>
+                  Account Created! <br />
+                </>
+              :<></>
+            }
+
+            <div>
+              <button
+                onClick={() => setLog("login")}
+                className={log === "login" ? "activepage" : ""}
+              >
+                Login
+              </button>
+            </div><br />
+
+            <div>
+              <button onClick={() => setLog("signup")}
+                className={log === "signup" ? "activepage" : ""}
+              >
+                SignUp
+              </button>
+            </div>
+
+            <div>
+              <Link to="/"> <img src={picture} alt="logo" /> </Link>
+            </div>
+          </div>
+
+          <div id="loginright">
+            { 
+              log === "signup" 
+              ? <SignUp change={changeState} /> 
+              : <Login />
+            }
+          </div>
         </div>
-
-    )
+      </center>
+    </div>
+  );
 }

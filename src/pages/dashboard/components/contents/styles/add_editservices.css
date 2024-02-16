@@ -1,78 +1,78 @@
-.serviceimage{
-    float: right;
-    padding: 2em;
-    margin-right: 3em;
+.serviceimage {
+  float: right;
+  padding: 2em;
+  margin-right: 3em;
 }
-.serviceimage div{
-    border-radius: 1.2em;
-    width: 150px;
-    height: 150px;
-    background-color: green;
+.serviceimage div {
+  border-radius: 1.2em;
+  width: 150px;
+  height: 150px;
+  background-color: green;
 }
 
 .serviceimage div img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 1.2em;
-  }
-  
-
-#addservice input, #addservice input:focus{
-    border: none;
-    border-bottom: 1px solid black;
-    width: 90%;
-    height: 2em;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.2em;
 }
 
-#addservice > div:nth-of-type(2){
-    clear: both;
-    margin-left: 5%;
+#addservice input,
+#addservice input:focus {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 90%;
+  height: 2em;
 }
 
-#addservice > div:nth-of-type(2) > div{
-    display: flex;
+#addservice > div:nth-of-type(2) {
+  clear: both;
+  margin-left: 5%;
 }
-#addservice > div:nth-of-type(2) > div div{
-    margin-right: 3em;
+
+#addservice > div:nth-of-type(2) > div {
+  display: flex;
+}
+#addservice > div:nth-of-type(2) > div div {
+  margin-right: 3em;
 }
 
 #addservice select {
-    height: 2em;
+  height: 2em;
 }
 
-#addservice button{
-    float: right;
-    background-color: black;
-    padding: 1em 2em;
-    margin-right: 5em;
-    margin-bottom: 3em;
-    border-radius: 3em;
-    color: white;
+#addservice button {
+  float: right;
+  background-color: black;
+  padding: 1em 2em;
+  margin-right: 5em;
+  margin-bottom: 3em;
+  border-radius: 3em;
+  color: white;
 }
 
-#addservice p{
-    color: red;
+#addservice p {
+  color: red;
 }
-#inputabout{
-    height: 10em;
-}
-
-#servicepicture{
-    display: none;
+#inputabout {
+  height: 10em;
 }
 
-.serviceimage a{
-    background-color: black;
-    padding: 0.5em 1em;
-    border-radius: 3em;
-    color: white;
-    font-size: small;
+#servicepicture {
+  display: none;
 }
 
-@media screen and (max-width:1000px){
-    .serviceimage{
-        margin-right: 50%;
-        transform: translate(50%, 0%);
-    }
+.serviceimage a {
+  background-color: black;
+  padding: 0.5em 1em;
+  border-radius: 3em;
+  color: white;
+  font-size: small;
+}
+
+@media screen and (max-width: 1000px) {
+  .serviceimage {
+    margin-right: 50%;
+    transform: translate(50%, 0%);
+  }
 }
