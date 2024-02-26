@@ -56,9 +56,7 @@ const NavSub = () => {
       <div>
         <span>
           {
-            user === undefined
-            ? "Welcome" + {user}
-            : "Welcome! " + sessionData?.profile?.name.split(" ")[0] || "" + {user}
+            sessionData?.profile?.name.length > 1 ? "Hello! "+sessionData?.profile?.name?.split(" ")[0] : "Welcome!"
           }
         </span>
         

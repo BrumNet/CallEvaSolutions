@@ -20,9 +20,10 @@
 }
 
 .search input {
-  height: 2.83em;
+  max-height: 2.83em;
   width: 70%;
   border: none;
+  border-radius: 0
 }
 
 .search button:nth-of-type(odd) {

@@ -33,6 +33,7 @@
 .navparent img {
   position: absolute;
   top: -40px;
+  margin-left: -35px;
   height: 48px;
 }
 
@@ -51,7 +52,7 @@
   display: inline-block;
 }
 .navparent span {
-  margin-left: 2em;
+  margin-left: 1.4em;
   position: relative;
 }
 #cat {

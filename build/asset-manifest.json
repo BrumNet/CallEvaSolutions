@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/callevasolutions/static/css/main.be57010f.css",
-    "main.js": "/callevasolutions/static/js/main.b8651398.js",
-    "static/js/787.2c1b263d.chunk.js": "/callevasolutions/static/js/787.2c1b263d.chunk.js",
+    "main.css": "/callevasolutions/static/css/main.e12de853.css",
+    "main.js": "/callevasolutions/static/js/main.602aed52.js",
+    "static/js/787.96c4f5e1.chunk.js": "/callevasolutions/static/js/787.96c4f5e1.chunk.js",
     "static/media/heropicture1.jpg": "/callevasolutions/static/media/heropicture1.7bcbef0aefa8baf3e3fa.jpg",
-    "static/media/cleaning.jpg": "/callevasolutions/static/media/cleaning.c0c25559558a44e6492f.jpg",
     "static/media/food.jpg": "/callevasolutions/static/media/food.a580c7069278559d2743.jpg",
     "static/media/heropicture2.jpg": "/callevasolutions/static/media/heropicture2.bb621fdaea3a00a6bee0.jpg",
     "static/media/website_development.webp": "/callevasolutions/static/media/website_development.1a54b66e0e6b8f516ee7.webp",
@@ -32,12 +31,12 @@
     "static/media/equiped.webp": "/callevasolutions/static/media/equiped.0c2d8a7f6da01d660144.webp",
     "static/media/serviceimage.jpg": "/callevasolutions/static/media/serviceimage.032bade3a167187bab25.jpg",
     "index.html": "/callevasolutions/index.html",
-    "main.be57010f.css.map": "/callevasolutions/static/css/main.be57010f.css.map",
-    "main.b8651398.js.map": "/callevasolutions/static/js/main.b8651398.js.map",
-    "787.2c1b263d.chunk.js.map": "/callevasolutions/static/js/787.2c1b263d.chunk.js.map"
+    "main.e12de853.css.map": "/callevasolutions/static/css/main.e12de853.css.map",
+    "main.602aed52.js.map": "/callevasolutions/static/js/main.602aed52.js.map",
+    "787.96c4f5e1.chunk.js.map": "/callevasolutions/static/js/787.96c4f5e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be57010f.css",
-    "static/js/main.b8651398.js"
+    "static/css/main.e12de853.css",
+    "static/js/main.602aed52.js"
   ]
 }

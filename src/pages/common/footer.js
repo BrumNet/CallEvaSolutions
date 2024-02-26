@@ -35,7 +35,7 @@ export function Footer() {
 
         <div>
           LOCATIONS<br /><br />
-          <Link to="/browse">All Locations</Link>
+          <Link to="/browse">Location Search</Link>
         </div>
 
         <div>

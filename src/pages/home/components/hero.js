@@ -19,8 +19,8 @@ export function Hero() {
       <div>
         <h2>
           QUALITY
-          <br /> SERVICES,
-          <br /> ON DEMAND
+          SERVICES,
+          ON DEMAND
         </h2>
         <p>Get access to reliable and affordable services</p>
       </div>

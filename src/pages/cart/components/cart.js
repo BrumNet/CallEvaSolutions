@@ -35,7 +35,7 @@ export const CartComp = () => {
  
   const [paymentPrompt, changePrompt] = useState(false);
   const [curr, setCurr] = useState("USD")
-  const [cart, changeCart] = useState(0)
+  const [cart, changeCart] = useState(Array.from(Object.values(cartItems)).length || 0)
 
   const xdata = {};
   const prices = [0]
@@ -61,7 +61,7 @@ export const CartComp = () => {
             {
                 Array.from(Object.values(cartItems)).map(
                     (x, i)  => {
-                        prices.push(+x.price.substring(3))
+                    prices[i] =  +convertCurrency(x.price, curr).substring(3)
                     return (
                         <>
                             <span>{i + 1}) {x.packageName}</span> 
@@ -74,9 +74,9 @@ export const CartComp = () => {
             }
         </div>
         <div>
-          <small>Amount Due: {prices.reduce((x,y) => x+y)}</small> 
+          <small>Amount Due (Total): {curr + " " +prices.reduce((x,y) => x + y)}</small> 
           <br />
-          <center>
+          <center> 
             <button>
                 <Cart /> Pay with Wallet
             </button> 
